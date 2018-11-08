@@ -1,0 +1,32 @@
+<view class="memberInfo">
+    <view class="top-space"></view>
+    <view class="navList">
+        <view class="navItem" data-id="avatar">
+            <text class="listLeft" data-id="avatar">头像</text>
+            <view class="extra" data-id="avatar">
+                <view class="avatarWrap">
+                    <image mode="aspectFill" src="{{userAvatar}}" wx:if="{{userAvatar}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="navItem" data-id="userName">
+            <text class="listLeft" data-id="userName">用户名</text>
+            <view class="extra content-name" data-id="userName" wx:if="{{userName}}">
+                <text class="content-text">{{userName}}</text>
+            </view>
+        </view>
+        <view class="navItem" data-id="sex">
+            <text class="listLeft" data-id="sex">性别</text>
+            <view class="picker extra">{{sexArray[sexIndex]}}</view>
+        </view>
+        <view class="navItem hideAfter">
+            <text class="listLeft" data-id="mobile">绑定手机</text>
+            <view class="extra" data-id="mobile" wx:if="{{mobile}}">
+        {{mobile}}
+      </view>
+        </view>
+    </view>
+    <view class="btnWrap">
+        <button bindtap="handlerLogout" id="logoutBtn">退出登录</button>
+    </view>
+</view>

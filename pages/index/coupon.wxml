@@ -1,0 +1,1 @@
+<web-view bindmessage="getMessage" src="https://mkt.luckincoffee.com/coupon/mini?invitationCode=MK20181102002&frommini=mini"></web-view>

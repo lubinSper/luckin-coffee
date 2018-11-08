@@ -1,0 +1,54 @@
+.res-container {
+    margin-top: 90rpx;
+    text-align: center;
+    padding-top: 240rpx;
+    background-size: 160rpx 160rpx;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.res-container.success {
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/success_icon.png');
+}
+
+.res-container.fail {
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/fail_icon.png');
+}
+
+.res-container .title {
+    font-size: 56rpx;
+    color: #333333;
+    margin-bottom: 60rpx;
+}
+
+.res-container .desc {
+    font-size: 32rpx;
+    color: #333333;
+    margin-bottom: 130rpx;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 40rpx;
+}
+
+.btn {
+    height: 100rpx;
+    width: 300rpx;
+    font-size: 30rpx;
+    color: #7CA7D2;
+    background: #fff;
+    border: 1px solid #7CA7D2;
+    border-radius: 4rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.color-dark {
+    color: #fff;
+    background: #7CA7D2;
+}

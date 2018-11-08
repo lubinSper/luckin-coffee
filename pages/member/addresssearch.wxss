@@ -1,0 +1,77 @@
+.address-search {
+    height: 100vh;
+}
+
+.address-search .nothing {
+    margin-top: 200rpx;
+    text-align: center;
+}
+
+.address-search .nothing .icon {
+    margin: 0 auto;
+    width: 250rpx;
+    height: 172rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/nothing.png) center no-repeat;
+    background-size: cover;
+}
+
+.address-search .nothing .text {
+    color: #999;
+    font-size: 26rpx;
+    text-align: center;
+    margin-top: 60rpx;
+}
+
+.address-search .search {
+    position: relative;
+    padding: 0 30rpx;
+    text-align: center;
+}
+
+.address-search .search input {
+    height: 66rpx;
+    text-align: left;
+    background: #f8f8f8;
+    border-radius: 8rpx;
+    padding: 0 20rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.address-search .search .clear {
+    position: absolute;
+    z-index: 99;
+    top: 20rpx;
+    right: 30rpx;
+    width: 30rpx;
+    height: 30rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/clear.png) center no-repeat;
+    background-size: cover;
+}
+
+.address-search .list {
+    padding-left: 30rpx;
+    background: #fff;
+}
+
+.address-search .list .item {
+    height: 140rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.address-search .list .item .name {
+    padding-top: 32rpx;
+    color: #333;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.address-search .list .item .detail {
+    padding-top: 6rpx;
+    color: #999;
+    font-size: 24rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 30rpx;
+}

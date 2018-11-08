@@ -1,0 +1,28 @@
+<view class="commentFeel">
+    <view class="commentTitle">
+    {{satisfied?'“满意”':'“不满意”'}}
+  </view>
+    <view class="commentEmoticon">
+        <view bindtap="chooseEmoticon" class="satisfied {{satisfied?'satisfied_active':''}}" data-emoticon="satisfied" id="comment_satisfied"></view>
+        <view bindtap="chooseEmoticon" class="dissatisfied {{!satisfied?'dissatisfied_active':''}}" data-emoticon="dissatisfied " id="comment_dissatisfied"></view>
+    </view>
+</view>
+<view class="commentContent_satisfied " wx:if="{{satisfied}}">
+    <view class="txtBox ">
+        <textarea bindinput="inputCommentMsg" maxlength="200 " placeholder="输入评价内容（可不填）" placeholderStyle="color:#cdcdcd; font-size:26rpx;" value="{{satisfiedMsg}}"></textarea>
+        <view class="txtCount ">{{satisfiedMsgCount}}/200</view>
+    </view>
+</view>
+<view class="commentContent_dissatisfied" wx:else>
+    <view class="complainList">
+        <view bindtap="chooseReason" class="complainType {{dissatisfiedReason&&item.dictsId===dissatisfiedReason.dictsId?'active':''}}" data-reason="{{item}}" id="reason_{{item.dictsId}}" wx:for="{{evaluateList}}" wx:key="reason_{{index}}">
+            <text>{{item.labelContent}}</text>
+            <view class="evaluateIcon" wx:if="{{item.icon}}">
+                <image bindtap="showSlowTip" id="slowTipIcon" mode="widthFix" src="{{item.icon}}"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="commentFooter">
+    <view bindtap="saveComment" class="saveBtn" id="saveCommentBtn">保存</view>
+</view>

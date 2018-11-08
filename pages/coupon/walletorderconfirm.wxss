@@ -1,0 +1,187 @@
+page {
+    background-color: #fbfbfb;
+    padding-bottom: 120rpx;
+}
+
+.order-info {
+    margin-top: 20rpx;
+    padding: 0 30rpx;
+    background-color: #fff;
+}
+
+.order-info .order-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32rpx;
+    padding-top: 32rpx;
+    color: #4A4A4A;
+    font-size: 28rpx;
+    border-bottom: 1PX solid #e6e6e6;
+}
+
+.order-info .order-item:last-child {
+    border-bottom: 1PX solid #4a4a4a;
+}
+
+.order-info .item-separator {
+    width: 16rpx;
+    height: 1rpx;
+    background: #4A4A4A;
+    display: flex;
+    margin: 20rpx 10rpx 0 10rpx;
+}
+
+.order-info .order-item.gift {
+    color: #7CA7D2;
+}
+
+.order-item.gift .item-separator {
+    background: #7CA7D2;
+}
+
+.order-info .order-item .item-info {
+    display: flex;
+    font-weight: bold;
+}
+
+.item-info .item-name {
+}
+
+.item-info .item-desc {
+}
+
+.item-amount-price {
+    display: flex;
+    text-align: right;
+    font-size: 26rpx;
+}
+
+.item-amount-price .item-price {
+    width: 100rpx;
+    font-weight: bold;
+}
+
+.order-total-price {
+    display: flex;
+    justify-content: space-between;
+    padding: 32rpx 30rpx 36rpx 30rpx;
+    align-items: center;
+    background: #fff;
+}
+
+.order-total-price .total-amount {
+    display: flex;
+    font-size: 28rpx;
+}
+
+.order-total-price .total-price {
+    display: flex;
+    align-items: center;
+}
+
+.order-total-price .price-desc {
+    font-size: 28rpx;
+    margin-right: 10rpx;
+}
+
+.order-total-price .price-num {
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.agreement-info {
+    padding: 0 30rpx;
+    margin: 30rpx 0;
+}
+
+.agreement-info.is-ipx {
+    padding-bottom: 68rpx;
+}
+
+.agreement-info .pay-agree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 22rpx;
+    color: #666;
+    line-height: 32rpx;
+    margin-bottom: 12rpx;
+}
+
+.agreement-info .pay-agree .pay-agree-msg {
+    display: flex;
+    align-items: center;
+    padding-left: 16rpx;
+}
+
+.agreement-info .pay-agree .pay-agree-checkbox {
+    width: 28rpx;
+    height: 28rpx;
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/selected.png") no-repeat;
+    background-size: cover;
+}
+
+.agreement-info .pay-agree .un-agree {
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/unselected.png") no-repeat;
+    background-size: cover;
+}
+
+.agreement-info .pay-agree navigator {
+    color: #7ca7d2;
+}
+
+.agreement-info .invoice-tip {
+    font-size: 22rpx;
+    color: #999;
+    line-height: 32rpx;
+}
+
+.confirm-footer {
+    z-index: 10000;
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.confirm-footer .btn-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.confirm-footer .total {
+    width: 470rpx;
+    font-size: 28rpx;
+    color: #333;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    padding-left: 40rpx;
+}
+
+.confirm-footer .total .emph {
+    font-size: 48rpx;
+}
+
+.confirm-footer .btn {
+    height: 100%;
+    width: 240rpx;
+    font-size: 34rpx;
+    border: 1px solid #7CA7D2;
+    background: #7CA7D2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-footer .btn.disabled {
+    opacity: 0.3;
+}

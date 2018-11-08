@@ -1,0 +1,184 @@
+page {
+    background: #FBFBFB;
+    padding-bottom: 120rpx;
+}
+
+.wallet-desc {
+    line-height: 48rpx;
+    font-size: 26rpx;
+    color: #333;
+    margin: 16rpx 30rpx 16rpx 80rpx;
+}
+
+.wallet-desc:before {
+    content: '';
+    background: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/prompt_icon.png') no-repeat;
+    background-size: contain;
+    width: 36rpx;
+    height: 39rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 20rpx;
+}
+
+.wallet-list {
+    margin: 0 30rpx;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wallet-list.is-ipx {
+    padding-bottom: 68rpx;
+}
+
+.card-item {
+    flex: 1rpx 334rpx;
+    align-items: center;
+    justify-content: center;
+    width: 334rpx;
+    height: 212rpx;
+    margin-bottom: 25rpx;
+    border: 1PX solid #e0e0e0;
+    position: relative;
+    z-index: 1;
+    background: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/ticket_bg.png') no-repeat;
+    background-position: 0 -60rpx;
+    background-size: 336rpx 332rpx;
+}
+
+.card-item .notch {
+    width: 18rpx;
+    border-left: 1PX dashed #FBFBFB;
+    height: 36rpx;
+    position: absolute;
+    z-index: 999;
+    background: #FBFBFB;
+}
+
+.card-item .notch.left-notch {
+    border-top-right-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    left: -1rpx;
+    top: 86rpx;
+}
+
+.card-item .notch.right-notch {
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    border: 1px solid #e0e0e0;
+    border-right: 0;
+    right: -1rpx;
+    top: 86rpx;
+}
+
+.card-content {
+    padding: 24rpx 40rpx;
+}
+
+.card-content .card-type {
+    font-size: 26rpx;
+}
+
+.card-content .card-type::first-letter {
+    font-size: 36rpx;
+}
+
+.card-content .card-price {
+    font-size: 52rpx;
+    margin-top: 18rpx;
+}
+
+.card-content .card-price::first-letter {
+    font-size: 26rpx;
+}
+
+.card-content .card-num {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.card-content .card-image {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 36rpx;
+    bottom: 24rpx;
+}
+
+.card-content .card-image image {
+    width: 100%;
+    height: 100%;
+}
+
+.usewallet-footer {
+    z-index: 10000;
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.usewallet-footer .btn-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.usewallet-footer .btn {
+    height: 37rpx;
+    margin: 30rpx 0;
+    width: 344rpx;
+    font-size: 26rpx;
+    padding-top: 45rpx;
+    color: #666666;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #ccc;
+    background-size: 40rpx 40rpx;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
+.usewallet-footer .btn.discount {
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/icon_discount.png');
+}
+
+.usewallet-footer .btn.offer {
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/icon_offer.png');
+}
+
+.usewallet-footer .btn.redpacket {
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/icon_redpacket.png');
+    border-right: none;
+}
+
+.usewallet-footer .btn.do-not-use {
+    border: 1px solid #7CA7D2;
+    background: #fff;
+    color: #7CA7D2;
+    border-radius: 3px;
+}
+
+.empty-list {
+    width: 100%;
+    height: 300rpx;
+    text-align: center;
+    padding-top: 200rpx;
+    margin-top: 170rpx;
+    font-size: 26rpx;
+    color: #999999;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/bg_wallet_empty.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 270rpx 172rpx;
+}

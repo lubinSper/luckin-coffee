@@ -1,0 +1,88 @@
+{
+    "pages": [
+        "pages/index/home",
+        "pages/index/menu",
+        "pages/index/login",
+        "pages/index/cart",
+        "pages/index/inviter",
+        "pages/index/coupon",
+        "pages/index/imgwebview",
+        "pages/order/list",
+        "pages/address/select",
+        "pages/address/city",
+        "pages/order/confirm",
+        "pages/order/detail",
+        "pages/order/qrcode",
+        "pages/order/comment",
+        "pages/order/commentdesc",
+        "pages/order/mycomment",
+        "pages/order/remark",
+        "pages/member/center",
+        "pages/member/supplement",
+        "pages/member/info",
+        "pages/member/addresslist",
+        "pages/member/addressedit",
+        "pages/member/invitationpeople",
+        "pages/agreement/pay",
+        "pages/agreement/member",
+        "pages/logs/logs",
+        "pages/member/addresssearch",
+        "pages/order/customerservice",
+        "pages/order/selectcoffeewallet",
+        "pages/order/usecoffeewallet",
+        "pages/coupon/coupon",
+        "pages/coupon/wallet",
+        "pages/coupon/walletbuy",
+        "pages/coupon/walletdetail",
+        "pages/coupon/walletorderconfirm",
+        "pages/coupon/walletorderresult"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "luckin coffee",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false,
+        "backgroundColor": "#fff"
+    },
+    "tabBar": {
+        "color": "#2A4C7E",
+        "selectedColor": "#2A4C7E",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/index/home",
+                "iconPath": "resources/images/index/index_blur.png",
+                "selectedIconPath": "resources/images/index/index_focus.png"
+            },
+            {
+                "text": "菜单",
+                "pagePath": "pages/index/menu",
+                "iconPath": "resources/images/index/list_blur.png",
+                "selectedIconPath": "resources/images/index/list_focus.png"
+            },
+            {
+                "text": "订单",
+                "pagePath": "pages/order/list",
+                "iconPath": "resources/images/index/order_blur.png",
+                "selectedIconPath": "resources/images/index/order_focus.png"
+            },
+            {
+                "text": "购物车",
+                "pagePath": "pages/index/cart",
+                "iconPath": "resources/images/index/cart_blur.png",
+                "selectedIconPath": "resources/images/index/cart_focus.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/member/center",
+                "iconPath": "resources/images/index/my_blur.png",
+                "selectedIconPath": "resources/images/index/my_focus.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 15000
+    }
+}

@@ -1,0 +1,224 @@
+page {
+    background: #fbfbfb;
+    margin-top: 56rpx;
+}
+
+.wallet-container {
+    padding-bottom: 200rpx;
+}
+
+.wallet-desc {
+    line-height: 48rpx;
+    font-size: 26rpx;
+    color: #666;
+    margin: 16rpx 30rpx 16rpx 30rpx;
+}
+
+.wallet-list {
+    margin: 0 30rpx 30rpx;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-item {
+    align-items: center;
+    justify-content: center;
+    width: 690rpx;
+    height: 160rpx;
+    margin-bottom: 25rpx;
+    border: 1PX solid #e0e0e0;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+
+.card-item.disabled {
+    color: #BFBFBF;
+}
+
+.card-item .notch {
+    background: #fbfbfb;
+    width: 30rpx;
+    height: 14rpx;
+    position: absolute;
+    z-index: 999;
+}
+
+.card-item .notch.top-notch {
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+    left: 180rpx;
+    top: -1rpx;
+}
+
+.card-item .notch.bottom-notch {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    border: 1px solid #e0e0e0;
+    border-bottom: 0;
+    left: 180rpx;
+    bottom: -1rpx;
+}
+
+.card-content {
+    padding: 24rpx 0;
+}
+
+.card-content .seperator {
+    content: '';
+    height: 100rpx;
+    width: 1rpx;
+    background: #F0F0F0;
+    top: 30rpx;
+    display: block;
+    position: absolute;
+    left: 196rpx;
+}
+
+.card-content .card-type {
+    font-size: 28rpx;
+    position: absolute;
+    left: 240rpx;
+    max-width: 360rpx;
+    height: 50rpx;
+    padding-right: 35rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 45rpx;
+}
+
+.card-content .occupied {
+    font-size: 10px;
+    color: #7CA7D2;
+    line-height: 28rpx;
+    border: 1rpx solid #7CA7D2;
+    border-radius: 4rpx;
+    padding: 0 5rpx;
+}
+
+.card-content .card-date {
+    font-size: 22rpx;
+    color: #999999;
+    position: absolute;
+    left: 240rpx;
+    max-width: 360rpx;
+    height: 50rpx;
+    top: 90rpx;
+}
+
+.disabled .card-content .card-date {
+    color: #BFBFBF;
+}
+
+.card-content .card-price {
+    font-size: 48rpx;
+    margin-top: 30rpx;
+    width: 200rpx;
+    text-align: center;
+    margin-left: -12rpx;
+}
+
+.card-content .card-price::first-letter {
+    font-size: 26rpx;
+}
+
+.card-content .card-num {
+    font-size: 22rpx;
+    color: #E96957;
+    width: 200rpx;
+    text-align: center;
+}
+
+.card-content .checkbox {
+    width: 44rpx;
+    height: 44rpx;
+    background: url('https://static.luckincoffeecdn.com/mini/images/confirmOrder/nochecked.png') no-repeat;
+    background-size: cover;
+    margin-right: 30rpx;
+    position: absolute;
+    right: 0;
+    top: 60rpx;
+}
+
+.card-content .checked {
+    background: url('https://static.luckincoffeecdn.com/mini/images/confirmOrder/checked.png') no-repeat;
+    background-size: cover;
+}
+
+.card-content .disabled-check {
+    border-radius: 50%;
+    background: #f2f2f2;
+}
+
+.card-item.gift {
+    background: #FFFBF8;
+}
+
+.card-item.gift,.card-item.gift .notch.top-notch,.card-item.gift .notch.bottom-notch {
+    border-color: #FED9C4;
+}
+
+.card-item.gift .card-content .card-num {
+    color: #F99768;
+}
+
+.card-content .card-price.has-desc {
+    margin-top: 12rpx;
+}
+
+.card-item.gift .card-content .seperator {
+    background: #F7E9DF;
+}
+
+.usewallet-footer {
+    z-index: 10000;
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.usewallet-footer .btn-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.usewallet-footer .btn {
+    height: 84rpx;
+    width: 690rpx;
+    font-size: 26rpx;
+    color: #fff;
+    background: #7CA7D2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.usewallet-footer .btn.do-not-use {
+    border: 1px solid #7CA7D2;
+    background: #fff;
+    color: #7CA7D2;
+    border-radius: 3px;
+}
+
+.end-text {
+    position: relative;
+    text-align: center;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.end-text.is-ipx {
+    padding-bottom: 68rpx;
+}

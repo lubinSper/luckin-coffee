@@ -1,0 +1,25 @@
+<view class="city">
+    <scroll-view scrollY scrollIntoView="{{quickLetter}}" scrollWithAnimation="{{true}}">
+        <view bindtap="locationCitySelectHandler" class="curr" id="city_{{locationCityInfo?locationCityInfo.cityId:0}}">
+            <label class="location-icon"></label>
+            <label class="name">{{locationCityInfo?locationCityInfo.cityName:'定位失败'}}</label>
+            <label class="note" wx:if="{{locationCityInfo}}">当前定位城市</label>
+        </view>
+        <view class="block">
+            <view wx:for="{{cityAry}}" wx:key="{{ item }}">
+                <view bindtap="citySelectHandler" class="city-item" data-city="{{item}}" id="city_{{item.cityId}}" wx:if="{{item.cityId}}">
+                    <view class="check">
+                        <label class="check-icon" wx:if="{{selectedCityId===item.cityId}}"></label>
+                    </view>
+                    <label class="city-name">{{item.showName}}</label>
+                </view>
+                <view class="letter" id="{{item}}" wx:else>{{item}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="quick">
+        <view class="list">
+            <label bindtap="quickTapHandler" class="item" id="{{item}}" wx:for="{{letterAry}}" wx:key="{{ item }}">{{item}}</label>
+        </view>
+    </view>
+</view>

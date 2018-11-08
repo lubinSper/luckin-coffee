@@ -1,0 +1,25 @@
+<view class="remarkBody">
+    <view class="{{index===remark.length-1?'remarkItem lastItem':'remarkItem'}}" wx:for="{{remark}}" wx:key="remark_{{index}}">
+        <view>
+            <view class="remarkTitle">{{item.mRemarkName}}</view>
+            <view class="remarkOpts">
+                <view bindtap="chooseOpt" class="{{opt.selected?'active':''}}" data-item="{{item}}" data-itemindex="{{index}}" data-opt="{{opt}}" data-optindex="{{idx}}" id="chooseOpt_{{idx}}" wx:for="{{item.remarkList}}" wx:for-index="idx" wx:for-item="opt" wx:key="opt_{{idx}}">
+          {{opt.name}}
+        </view>
+            </view>
+        </view>
+        <view class="itemAmount" wx:if="{{item.showAmount}}">
+            <view bindtap="amountChange" class="itemAmountBtn minusIcon" data-action="minus" data-index="{{index}}" data-item="{{item}}" data-itemindex="{{index}}" id="minusIcon_{{idx}}"></view>
+            <view class="itemAmountText">{{item.amount}}</view>
+            <view bindtap="amountChange" class="itemAmountBtn addIcon" data-action="add" data-index="{{index}}" data-item="{{item}}" data-itemindex="{{index}}" id="addIcon_{{idx}}"></view>
+        </view>
+    </view>
+    <view class="remarkTxt">
+        <text class="remarkPlaceholder">{{remarkPlaceholder}}</text>
+        <textarea bindblur="textareaBlur" bindfocus="textareaFocus" bindinput="inputRemarkMsg" maxlength="30" value="{{remarkMsg}}"></textarea>
+        <view class="txtCount">{{remarkMsgCount}}/30</view>
+    </view>
+</view>
+<view class="remarkFooter">
+    <view bindtap="saveRemark" class="saveBtn" id="saveRemarkBtn">保存</view>
+</view>

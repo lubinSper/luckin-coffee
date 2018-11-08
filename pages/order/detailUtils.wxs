@@ -1,0 +1,68 @@
+module.exports = ({
+    getAdditionInfo: getAdditionInfo,
+    getEvaluateText: getEvaluateText,
+    formatRefundDesc: formatRefundDesc,
+    formatRefundAmount: formatRefundAmount,
+    getBtnStatus: getBtnStatus,
+    fixCount: fixCount,
+});
+
+function getAdditionInfo(item) {
+    var info = [];
+    if (!item.standardCode === false) {
+        info.push(item.standardCode)
+    };
+    if (item.additionList.length > 0) {
+        for (var i = 0; i < item.additionList.length; i++) {
+            info.push(item.additionList[((nt_0 = (i), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))].showStr)
+        }
+    };
+    if (!item.temperAttributeName === false) {
+        info.push(item.temperAttributeName)
+    };
+    return (info.join('/'))
+};
+
+function fixCount(count) {
+    var f = parseFloat(count);
+    if (isNaN(f)) {
+        return
+    };
+    f = Math.round(count * 100) / 100;
+    return (f)
+};
+
+function getEvaluateText(evaluateList) {
+    if (evaluateList && evaluateList.length > 0) {
+        return (evaluateList[(0)].content)
+    };
+    return ('')
+};
+
+function formatRefundDesc(desc) {
+    var textArray = desc.split('¥');
+    return (textArray[(0)])
+};
+
+function formatRefundAmount(desc) {
+    var textArray = desc.split('¥');
+    return (fixCount(textArray[(1)]))
+};
+
+function getBtnStatus(status, code, orderType) {
+    switch (status) {
+        case 'cancel':
+            return (code === 10 || code === 20);
+        case 'checkout':
+            return (code === 10);
+        case 'takeMealCode':
+            {
+                if (orderType == 2 && code == 60) {
+                    return (false)
+                };
+                return (code === 20 || code === 30 || code === 40 || code === 50 || code === 51 || code === 60 || code === 70)
+            };
+        case 'evaluate':
+            return (code === 80);
+    }
+};

@@ -1,0 +1,294 @@
+.top-bar {
+    text-align: center;
+}
+
+.top-bar .city-select {
+    line-height: 72rpx;
+    font-size: 26rpx;
+}
+
+.top-bar .city-select .note {
+    color: #999;
+}
+
+.top-bar .city-select .name {
+    color: #333;
+}
+
+.top-bar .city-select .arrow-down {
+    display: inline-block;
+    width: 18rpx;
+    height: 12rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/arrow-down.png) center no-repeat;
+    background-size: cover;
+    margin-left: 10rpx;
+    vertical-align: top;
+    margin-top: 32rpx;
+}
+
+.top-bar .type-switch {
+    line-height: 88rpx;
+    color: #333;
+    background: #fbfbfb;
+}
+
+.top-bar .type-switch .item {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    font-size: 28rpx;
+    cursor: pointer;
+}
+
+.top-bar .type-switch .item.curr {
+    font-weight: 700;
+    color: #7CA7D2;
+}
+
+.top-bar .type-switch .item.curr .line {
+    background: #7CA7D2;
+}
+
+.top-bar .type-switch .item .line {
+    display: block;
+    width: 80rpx;
+    height: 2rpx;
+    background: #fbfbfb;
+    margin: -15rpx auto 0 auto;
+}
+
+.shop-list {
+    height: calc(100vh - 170rpx);
+}
+
+.shop-list .no-shop {
+    font-size: 28rpx;
+    color: #999;
+    text-align: center;
+    margin-top: 200rpx;
+}
+
+.shop-list .shop {
+    padding-right: 30rpx;
+    margin-left: 30rpx;
+    height: 176rpx;
+    position: relative;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.shop-list .shop .selected {
+    float: left;
+    width: 56rpx;
+    height: 176rpx;
+}
+
+.shop-list .shop .selected .check-icon {
+    display: inline-block;
+    width: 32rpx;
+    height: 24rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/right.png) center no-repeat;
+    background-size: cover;
+    margin-top: 80rpx;
+}
+
+.shop-list .shop .time-icon {
+    display: inline-block;
+    width: 28rpx;
+    height: 28rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/timer.png) center no-repeat;
+    background-size: cover;
+    vertical-align: top;
+    margin-top: 3rpx;
+    margin-right: 5rpx;
+}
+
+.shop-list .shop .address-icon {
+    display: inline-block;
+    width: 24rpx;
+    height: 24rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/location.png) center no-repeat;
+    background-size: cover;
+    vertical-align: top;
+    margin-top: 3rpx;
+    margin-right: 5rpx;
+}
+
+.shop-list .shop .name {
+    padding-top: 20rpx;
+    color: #333;
+}
+
+.shop-list .shop .name .bold {
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.shop-list .shop .name .note {
+    margin-left: 16rpx;
+    font-size: 22rpx;
+}
+
+.shop-list .shop .open {
+    padding-top: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.shop-list .shop .detail {
+    padding-top: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.shop-list .shop .detail .detail-text {
+    display: inline-block;
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shop-list .shop .distance {
+    position: absolute;
+    top: 70rpx;
+    right: 30rpx;
+    font-size: 22rpx;
+    color: #333;
+}
+
+.shop-list .shop.disabled {
+    color: #999;
+}
+
+.shop-list .shop.disabled .name {
+    color: #999;
+}
+
+.shop-list .shop.disabled .open {
+    color: #999;
+}
+
+.shop-list .shop.disabled .detail {
+    color: #999;
+}
+
+.shop-list .shop.disabled .distance {
+    color: #999;
+}
+
+.my-address {
+    height: calc(100vh - 260rpx);
+}
+
+.address-list {
+    padding-left: 30rpx;
+}
+
+.address-list .title {
+    color: #666;
+    font-size: 24rpx;
+    line-height: 80rpx;
+}
+
+.address-list .title .relocation {
+    float: right;
+    font-size: 22rpx;
+    color: #7CA7D2;
+    padding-right: 30rpx;
+}
+
+.address-list .title .relocation .relocation-icon {
+    display: inline-block;
+    width: 24rpx;
+    height: 22rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/relocation.png) center no-repeat;
+    background-size: cover;
+    vertical-align: top;
+    margin-top: 28rpx;
+    margin-right: 10rpx;
+}
+
+.address-list .list .items {
+    height: 136rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.address-list .list .items .selected {
+    height: 136rpx;
+    width: 56rpx;
+    float: left;
+}
+
+.address-list .list .items .selected .check-icon {
+    display: inline-block;
+    width: 32rpx;
+    height: 24rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/right.png) center no-repeat;
+    background-size: cover;
+    margin-top: 60rpx;
+}
+
+.address-list .list .items .detail {
+    padding-top: 24rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333;
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.address-list .list .info .default {
+    background: #999;
+    color: #fff;
+    font-size: 20rpx;
+    padding: 0 10rpx;
+    border-radius: 6rpx;
+}
+
+.address-list .list .info .tag {
+    margin-left: 8rpx;
+    background: #7CA7D2;
+    color: #fff;
+    font-size: 20rpx;
+    padding: 0 10rpx;
+    border-radius: 6rpx;
+}
+
+.address-list .list .info .mobile {
+    margin-left: 8rpx;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.address-list .list .info .name {
+    margin-left: 8rpx;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.address-list .list .item {
+    height: 104rpx;
+    line-height: 104rpx;
+    font-size: 30rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.add-btn {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: block;
+    line-height: 98rpx;
+    background: #fff;
+    border-top: 1rpx solid #eee;
+    color: #7CA7D2;
+    text-align: center;
+    font-size: 38rpx;
+}
+
+.add-btn label text {
+    font-size: 30rpx;
+    font-weight: 700;
+}

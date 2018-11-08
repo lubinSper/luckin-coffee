@@ -1,0 +1,285 @@
+page {
+    background: #fbfbfb;
+    padding-bottom: 120rpx;
+}
+
+.wallet-desc {
+    line-height: 48rpx;
+    font-size: 26rpx;
+    color: #333;
+    margin: 16rpx 30rpx 16rpx 80rpx;
+    position: relative;
+}
+
+.wallet-desc:before {
+    content: '';
+    background: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/prompt_icon.png') no-repeat;
+    background-size: contain;
+    width: 36rpx;
+    height: 39rpx;
+    position: absolute;
+    left: -50rpx;
+    top: 6rpx;
+}
+
+.wallet-block.is-ipx {
+    padding-bottom: 68rpx;
+}
+
+.wallet-list {
+    margin: 0 30rpx 30rpx;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-item {
+    align-items: center;
+    justify-content: center;
+    width: 690rpx;
+    height: 125rpx;
+    margin-bottom: 25rpx;
+    border: 1PX solid #e0e0e0;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+
+.card-item .notch {
+    background: #fbfbfb;
+    width: 30rpx;
+    height: 14rpx;
+    position: absolute;
+    z-index: 999;
+}
+
+.card-item .notch.top-notch {
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+    left: 180rpx;
+    top: -1rpx;
+}
+
+.card-item .notch.bottom-notch {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    border: 1px solid #e0e0e0;
+    border-bottom: 0;
+    left: 180rpx;
+    bottom: -1rpx;
+}
+
+.card-content {
+    padding: 24rpx 40rpx;
+}
+
+.card-content .seperator {
+    content: '';
+    height: 65rpx;
+    width: 0;
+    border-left: 1PX dashed #F0F0F0;
+    top: 30rpx;
+    display: block;
+    position: absolute;
+    left: 196rpx;
+}
+
+.card-content .card-type {
+    font-size: 28rpx;
+    position: absolute;
+    left: 240rpx;
+    max-width: 200rpx;
+    height: 50rpx;
+    padding-right: 35rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 45rpx;
+}
+
+.card-content .card-type:after {
+    content: '';
+    background: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/prompt_icon.png') no-repeat;
+    background-size: contain;
+    width: 25rpx;
+    height: 30rpx;
+    margin-left: 12rpx;
+    position: absolute;
+    right: 0;
+    top: 6rpx;
+}
+
+.card-content .card-price {
+    font-size: 48rpx;
+    margin-top: 6rpx;
+}
+
+.card-content .card-price.with-num {
+    margin-top: -8rpx;
+}
+
+.card-content .card-price::first-letter {
+    font-size: 26rpx;
+}
+
+.card-content .card-num {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.card-item.gift {
+    background: #FFFBF8;
+}
+
+.card-item.gift,.card-item.gift .notch.top-notch,.card-item.gift .notch.bottom-notch {
+    border-color: #FED9C4;
+}
+
+.card-item.gift .card-content .card-num {
+    color: #F99768;
+}
+
+.card-item.gift .card-content .seperator {
+    border-color: #F7E9DF;
+}
+
+.item-amount {
+    display: block;
+    width: 150rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+    top: 40rpx;
+}
+
+.item-amount .item-amount-btn {
+    width: 44rpx;
+    height: 44rpx;
+    float: left;
+}
+
+.item-amount .add-icon {
+    background: #fff url('https://static.luckincoffeecdn.com/mini/images/common/add_icon.png') no-repeat;
+    background-size: contain;
+}
+
+.cartItem .disabled {
+    opacity: 0.5;
+}
+
+.item-amount .minus-icon {
+    background: #fff url('https://static.luckincoffeecdn.com/mini/images/common/minus_icon.png') no-repeat;
+    background-size: contain;
+}
+
+.item-amount .item-amount-text {
+    font-size: 28rpx;
+    text-align: center;
+    color: #333;
+    width: 62rpx;
+    margin-top: 5rpx;
+    float: left;
+}
+
+.highlight {
+    color: #F6976D;
+}
+
+.usewallet-footer {
+    z-index: 10000;
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.usewallet-footer .btn-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.usewallet-footer .total {
+    width: 470rpx;
+    font-size: 28rpx;
+    color: #333;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    padding-left: 40rpx;
+}
+
+.usewallet-footer .total .emph {
+    font-size: 48rpx;
+}
+
+.usewallet-footer .btn {
+    height: 100%;
+    width: 240rpx;
+    font-size: 34rpx;
+    border: 1px solid #7CA7D2;
+    background: #7CA7D2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usewallet-footer .btn.disabled {
+    opacity: 0.3;
+}
+
+.bubble {
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 80rpx;
+    left: 50%;
+    margin-left: -30rpx;
+    top: 20rpx;
+}
+
+.bubble .bubble-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 40rpx;
+    background-color: rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 1;
+}
+
+.bubble .bubble-count {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.empty-list {
+    width: 100%;
+    height: 300rpx;
+    text-align: center;
+    padding-top: 200rpx;
+    margin-top: 170rpx;
+    font-size: 26rpx;
+    color: #999999;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/coffeebank/bg_wallet_empty.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 270rpx 172rpx;
+}

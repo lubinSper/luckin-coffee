@@ -1,0 +1,149 @@
+page {
+    background: #fbfbfb;
+    padding-bottom: 118rpx;
+}
+
+.commentFeel {
+    width: 100%;
+    background: #fff;
+}
+
+.commentFeel .commentTitle {
+    text-align: center;
+    padding: 60rpx 0 40rpx 0;
+    line-height: 50rpx;
+    font-size: 36rpx;
+    color: #333;
+}
+
+.commentFeel .commentEmoticon {
+    padding-bottom: 64rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentFeel .commentEmoticon .satisfied {
+    width: 76rpx;
+    height: 76rpx;
+    margin: 0 30rpx;
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/satisfied.png') no-repeat;
+    background-size: cover;
+}
+
+.commentFeel .commentEmoticon .satisfied_active {
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/satisfied_active.png') no-repeat;
+    background-size: cover;
+}
+
+.commentFeel .commentEmoticon .dissatisfied {
+    width: 76rpx;
+    height: 76rpx;
+    margin: 0 30rpx;
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/dissatisfied.png') no-repeat;
+    background-size: cover;
+}
+
+.commentFeel .commentEmoticon .dissatisfied_active {
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/dissatisfied_active.png') no-repeat;
+    background-size: cover;
+}
+
+.commentContent_satisfied {
+    background: #fff;
+    padding: 0 30rpx 48rpx 30rpx;
+}
+
+.commentContent_satisfied .txtBox {
+    background: #fff;
+    border: 1rpx solid #e5e5e5;
+    border-radius: 6rpx;
+    padding: 20rpx;
+    color: #333;
+    font-size: 26rpx;
+    height: 184rpx;
+}
+
+.commentContent_satisfied .txtBox textarea {
+    color: #333;
+    width: 100%;
+    font-size: 26rpx;
+    height: 170rpx;
+}
+
+.commentContent_satisfied .txtBox .txtCount {
+    text-align: right;
+    width: 100%;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.commentContent_dissatisfied {
+    margin-top: 10rpx;
+    background-color: #fff;
+}
+
+.commentContent_dissatisfied .complainList {
+    padding: 0 2rpx 0 28rpx;
+}
+
+.commentContent_dissatisfied .complainList .complainType {
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/unselected.png") no-repeat 656rpx center;
+    background-size: 36rpx 36rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.commentContent_dissatisfied .complainList .active {
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/selected.png") no-repeat 656rpx center;
+    background-size: 36rpx 36rpx;
+}
+
+.commentContent_dissatisfied .complainList .complainType:last-child {
+    border: none;
+}
+
+.commentContent_dissatisfied .complainList .complainType text {
+    padding-right: 16rpx;
+    white-space: nowrap;
+}
+
+.commentContent_dissatisfied .complainList .complainType .evaluateIcon {
+    width: 100%;
+    height: 32rpx;
+    overflow: hidden;
+}
+
+.commentContent_dissatisfied .complainList .complainType .evaluateIcon image {
+    width: 100rpx;
+}
+
+.commentFooter {
+    z-index: 10000;
+    width: 100%;
+    height: 118rpx;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 0 4rpx 0 rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentFooter .saveBtn {
+    height: 84rpx;
+    line-height: 84rpx;
+    width: 100%;
+    text-align: center;
+    margin: 0 30rpx;
+    background: #7ca7d2;
+    color: #fff;
+    border-radius: 6rpx;
+    font-size: 30rpx;
+}

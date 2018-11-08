@@ -1,0 +1,333 @@
+page {
+    background: #fbfbfb;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.orangeTxt {
+    color: #e96957!important;
+}
+
+.cartHeader {
+    height: auto;
+}
+
+.cartContent {
+    box-sizing: border-box;
+    padding: 0 0 0 0;
+    padding-bottom: 104rpx;
+    overflow: hidden;
+    margin-top: 10rpx;
+}
+
+.cartItem {
+    width: 200%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartItem .cartItemInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+    background: #fff;
+}
+
+.cartItem .cartItemInfo .checkbox {
+    width: 44rpx;
+    height: 44rpx;
+    background: url('https://static.luckincoffeecdn.com/mini/images/common/unselected.png') no-repeat;
+    background-size: cover;
+    margin-left: 40rpx;
+    margin-right: 38rpx;
+}
+
+.cartItem .cartItemInfo .checked {
+    background: url('https://static.luckincoffeecdn.com/mini/images/common/selected.png') no-repeat;
+    background-size: cover;
+}
+
+.cartItem .cartItemInfo .disabledCheck {
+    border-radius: 50%;
+    background: #f2f2f2;
+}
+
+.cartItem .delete-box {
+    background-color: #e32727;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.cartItem .delete-text {
+    color: #fff;
+    padding: 0 60rpx;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.cartItem checkbox {
+    margin-left: 30rpx;
+    border-radius: 50%;
+}
+
+.cartItem .cartItemContent {
+    padding: 32rpx 0;
+    width: 628rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.cartItem:nth-last-child(1) .cartItemContent {
+    border-bottom: none;
+}
+
+.cartItem .cartItemContent .itemName {
+    line-height: 44rpx;
+    font-size: 32rpx;
+    color: #333;
+    margin-bottom: 4rpx;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+}
+
+.cartItem .cartItemContent .itemStandard {
+    font-size: 11px;
+    line-height: 30rpx;
+    color: #333;
+    margin-bottom: 8rpx;
+}
+
+.cartItem .cartItemContent .cartItemDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cartItem .cartItemContent .cartItemDetail .itemPrice {
+    font-size: 36rpx;
+    color: #333;
+    line-height: 50rpx;
+    font-weight: 700;
+}
+
+.cartItem .cartItemContent .cartItemDetail .itemPrice .priceUnit {
+    font-size: 22rpx;
+    color: #333;
+}
+
+.cartItem .cartItemContent .cartItemDetail .cartItemQty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartItem .cartItemContent .cartItemDetail .cartItemQty .itemState {
+    font-size: 22rpx;
+    color: #7ca7d2;
+    margin-right: 16rpx;
+}
+
+.cartItem .cartItemContent .cartItemDetail .cartItemQty .uncheck {
+    color: #999;
+}
+
+.cartItem .cartItemContent .cartItemDetail .cartItemQty .itemAmount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.cartItem .cartItemContent .cartItemDetail .cartItemQty .itemAmount .itemAmountBtn {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.itemAmount .addIcon {
+    background: #fff url('https://static.luckincoffeecdn.com/mini/images/common/add_icon.png') no-repeat;
+    background-size: cover;
+}
+
+.cartItem .disabled {
+    opacity: 0.5;
+}
+
+.itemAmount .minusIcon {
+    background: #fff url('https://static.luckincoffeecdn.com/mini/images/common/minus_icon.png') no-repeat;
+    background-size: cover;
+}
+
+.cartItem .cartItemContent .cartItemDetail .cartItemQty .itemAmount .itemAmountText {
+    font-size: 28rpx;
+    text-align: center;
+    color: #333;
+    width: 62rpx;
+}
+
+.cartFooter {
+    z-index: 10000;
+    width: 100%;
+    height: 104rpx;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -1px 5px 0 rgba(42,76,126,0.06);
+}
+
+.cartFooter .priceContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 30rpx;
+}
+
+.priceContent .priceDesc {
+    color: #e06e11;
+    font-size: 20rpx;
+}
+
+.priceContent .cartTotalLabel {
+    color: #666;
+    font-size: 28rpx;
+    margin-right: 10rpx;
+}
+
+.priceContent .cartTotalPriceUnit {
+    font-size: 36rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.priceContent .cartTotalPrice {
+    color: #333;
+    font-size: 48rpx;
+    font-weight: 700;
+}
+
+.cartFooter .cartCheckout {
+    height: 100%;
+    width: 260rpx;
+    font-size: 32rpx;
+    color: #fff;
+    background-color: #7ca7d2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartFooter .disabledBtn {
+    opacity: 0.3;
+}
+
+.emptyCart {
+    background: url(https://static.luckincoffeecdn.com/mini/images/cart/empty_icon.png) no-repeat center 240rpx;
+    background-size: 132rpx auto;
+    padding-top: 364rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyCart text {
+    font-size: 26rpx;
+    margin-bottom: 60rpx;
+    color: #666;
+}
+
+.emptyCart navigator {
+    background-color: #fff;
+    font-size: 26rpx;
+    color: #7ca7d2;
+    border: 1px solid #7ca7d2;
+    border-radius: 6rpx;
+    text-align: center;
+    height: 66rpx;
+    width: 198rpx;
+    line-height: 66rpx;
+}
+
+.cartItem .cartItemContent .cartItemDetail .redPrice {
+    color: #e16e0f;
+}
+
+.cartItem .cartItemContent .cartItemDetail .redPrice .priceUnit {
+    color: #e16e0f;
+}
+
+.cart-discountPrice {
+    font-size: 24rpx;
+    color: #999;
+    letter-spacing: 0;
+    text-decoration: line-through;
+    margin-left: 10rpx;
+}
+
+.cart-promotionMsg {
+    font-family: PingFangSC-Medium;
+    font-size: 18rpx;
+    line-height: 18rpx;
+    color: #fff;
+    vertical-align: middle;
+    letter-spacing: 1rpx;
+    background: #e06e11;
+    display: inline-block;
+    padding: 6rpx 10rpx;
+    border-radius: 4rpx;
+    font-weight: 0;
+    margin-bottom: 6rpx;
+    margin-left: 10rpx;
+}
+
+.emptyShop {
+    background-size: 132rpx auto;
+    padding-top: 364rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyShop text {
+    font-size: 26rpx;
+    margin-bottom: 40rpx;
+}
+
+.emptyShop .noShopInfo {
+    margin-bottom: 20rpx;
+}
+
+.emptyShop navigator {
+    background-color: #fff;
+    font-size: 26rpx;
+    color: #7ca7d2;
+    border: 1px solid #7ca7d2;
+    border-radius: 6rpx;
+    text-align: center;
+    height: 66rpx;
+    width: 198rpx;
+    line-height: 66rpx;
+}

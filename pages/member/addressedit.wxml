@@ -1,0 +1,51 @@
+<view class="container address-edit">
+    <view class="top-space"></view>
+    <view class="form">
+        <view class="item">
+            <label class="note">联系人</label>
+            <input bindblur="userNameBlurHandler" bindfocus="userNameFocusHandler" bindinput="userNameInputHandler" class="input" maxlength="10" placeholder="用于取餐时对您的称呼" placeholderClass="inputPlaceholder" value="{{userName}}"></input>
+            <label bindtap="userNameClearHandler" class="clear" id="userNameClearIcon" wx:if="{{showUserNameClear}}"></label>
+        </view>
+        <view class="item">
+            <label class="note">性别</label>
+            <view bindtap="sexClickHandler" class="group" data-sex="1" id="sex_man">
+                <label class="checkbox {{sex===1?'checked':''}}"></label>
+                <text>先生</text>
+            </view>
+            <view bindtap="sexClickHandler" class="group second" data-sex="2" id="sex_lady">
+                <label class="checkbox {{sex===2?'checked':''}}"></label>
+                <text>女士</text>
+            </view>
+        </view>
+        <view class="item">
+            <label class="note">手机号</label>
+            <input bindblur="telBlurHandler" bindfocus="telFocusHandler" bindinput="telInputHandler" class="input" maxlength="11" placeholder="请输入您的手机号" placeholderClass="inputPlaceholder" value="{{tel}}"></input>
+            <label bindtap="telClearHandler" class="clear" id="telClearIcon" wx:if="{{showTelClear}}"></label>
+        </view>
+        <view bindtap="gotoSelectAddress" class="item" id="selectAddress">
+            <label class="note">地址</label>
+            <text class="address-detail" wx:if="{{address}}">{{address}}</text>
+            <input class="input" disabled="true" placeholder="选择收货地址" placeholderClass="inputPlaceholder" value="{{address}}" wx:else></input>
+            <label class="right-arrow"></label>
+        </view>
+        <view class="item">
+            <label class="note">门牌号</label>
+            <input bindblur="addrDetailBlurHandler" bindfocus="addrDetailFocusHandler" bindinput="addrDetailInputHandler" class="input" maxlength="50" placeholder="如：5号楼208室" placeholderClass="inputPlaceholder" value="{{addrDetail}}"></input>
+            <label bindtap="addrDetailClearHandler" class="clear" id="addrDetailClearIcon" wx:if="{{showAddrDetailClear}}"></label>
+        </view>
+        <view class="item">
+            <label class="note">标签</label>
+            <text bindtap="addressTagClickHandler" class="tag {{tag===item.dictsId?'selected':''}}" data-tagid="{{item.dictsId}}" id="addressTag_{{item.dictsId}}" wx:for="{{addressTagList}}" wx:key="{{ index }}">{{item.dictsName}}</text>
+        </view>
+    </view>
+    <view class="default">
+        <view bindtap="defaultClickHandler" class="group" id="defaultAddress">
+            <label class="checkbox {{isDefault===1?'checked':''}}"></label>
+            <text>设为默认地址</text>
+        </view>
+    </view>
+    <view class="btns {{dulplication?'dulplication':'single'}} {{isIpx?'isIphonex':''}}">
+        <view bindtap="addressDeleteClickHandler" class="btn del-btn" id="deletAddressBtn">删除</view>
+        <view bindtap="addressSaveClickHandler" class="btn save-btn {{saveBtnEnable?'':'disabled'}} " id="saveBtn">保存</view>
+    </view>
+</view>

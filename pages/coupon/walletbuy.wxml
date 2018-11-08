@@ -1,0 +1,48 @@
+<template name="coloredTitle">
+    <text class="{{item.key}}">{{item.val}}</text>
+</template>
+<template name="emptyList">
+    <view class="empty-list">暂无可用杯券，敬请期待！</view>
+</template>
+<template name="cardItem">
+    <view class="card-item {{item.isGift?'gift':''}}">
+        <view class="bubble" wx:if="{{showBubble&&pressCouponId==item.couponId&&!item.isGift}}">
+            <view class="bubble-bg"></view>
+            <view class="bubble-count">{{pressInitAmount}}</view>
+        </view>
+        <view class="card-content">
+            <view class="card-price {{item.stockNum>0||item.isGift?'with-num':''}}">￥{{item.price}}</view>
+            <view class="card-num" wx:if="{{item.stockNum>0}}">尚余{{item.stockNum}}杯</view>
+            <view class="card-num" wx:if="{{item.isGift}}">{{item.giftDes}}</view>
+            <view class="seperator"></view>
+            <view bindtap="openDesc" class="card-type" data-item="{{item}}">{{item.coffeeStockTitle}}</view>
+            <view class="item-amount" wx:if="{{!item.isGift}}">
+                <view bindlongpress="amountChangeLongTap" bindtap="amountChange" bindtouchend="touchEndHandler" class="item-amount-btn minus-icon" data-action="minus" data-index="{{index}}" data-item="{{item}}" data-plan="{{plan}}" id="minusIcon_{{index}}"></view>
+                <view class="item-amount-text">{{item.amount>=0?item.amount:'0'}}</view>
+                <view bindlongpress="amountChangeLongTap" bindtap="amountChange" bindtouchend="touchEndHandler" class="item-amount-btn add-icon {{item.canCheck?'':'disabled'}}" data-action="add" data-index="{{index}}" data-item="{{item}}" data-plan="{{plan}}" id="addIcon_{{index}}"></view>
+            </view>
+        </view>
+        <view class="notch top-notch"></view>
+        <view class="notch bottom-notch"></view>
+    </view>
+</template>
+<view class="wallet-block {{isIpx?'is-ipx':''}}">
+    <view class="wallet-wrapper" wx:for="{{ticketList}}" wx:for-item="plan" wx:key="activityId">
+        <view bindtap="openDesc" class="wallet-desc" data-plan="{{plan}}">
+            <template is="coloredTitle" data="{{item:item}}" wx:for="{{utils.coloredTitle(plan.planDes)}}" wx:key="item.activityId"></template>
+        </view>
+        <view class="wallet-list">
+            <template is="cardItem" data="{{item:item,index:index,plan:plan,showBubble:showBubble,pressCouponId:pressCouponId,pressInitAmount:pressInitAmount}}" wx:if="{{plan.couponList.length>0}}" wx:for="{{plan.couponList}}" wx:key="index"></template>
+            <template is="emptyList" data wx:if="{{plan.couponList.length<=0}}"></template>
+        </view>
+    </view>
+    <template is="emptyList" data wx:if="{{ticketList.length<=0}}"></template>
+</view>
+<view class="usewallet-footer {{isIpx?'fix-iphonex-bottom':''}}">
+    <view class="btn-container">
+        <view class="total">应付合计<text class="emph">￥{{totalPrice}}</text>
+        </view>
+        <view bindtap="checkout" class="btn {{checkoutEnabled?'':'disabled'}}">去结算</view>
+    </view>
+</view>
+<wxs module="utils" src="walletUtils.wxs" />

@@ -1,0 +1,105 @@
+page {
+    background: #fbfbfb;
+    padding-bottom: 118rpx;
+}
+
+.commentContent {
+    background: #fff;
+    padding: 28rpx 30rpx 46rpx 30rpx;
+}
+
+.commentContent .txtBox {
+    background: #fff;
+    border: 1rpx solid #e5e5e5;
+    border-radius: 6rpx;
+    padding: 20rpx;
+    color: #333;
+    font-size: 26rpx;
+    height: 184rpx;
+}
+
+.commentContent .txtBox textarea {
+    color: #333;
+    width: 100%;
+    font-size: 26rpx;
+    height: 170rpx;
+}
+
+.commentContent .txtBox .txtCount {
+    text-align: right;
+    width: 100%;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.commentImgs {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.commentImgs .uploadTitle {
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 22rpx;
+}
+
+.commentImgs .uploadContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 50rpx;
+}
+
+.commentImgs .uploadImage {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.commentImgs .active {
+    background: #fff url('https://static.luckincoffeecdn.com/mini/images/order/icon_plus.png') no-repeat center;
+    background-size: 28rpx 28rpx;
+    border: 1rpx dashed #d5d5d5;
+    border-radius: 6rpx;
+}
+
+.commentImgs .uploadImage image {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.commentImgs .uploadCount {
+    font-size: 24rpx;
+    color: #999;
+    width: 88rpx;
+    padding-right: 20rpx;
+    text-align: right;
+}
+
+.commentFooter {
+    z-index: 10000;
+    width: 100%;
+    height: 118rpx;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 0 4rpx 0 rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentFooter .saveBtn {
+    height: 84rpx;
+    line-height: 84rpx;
+    width: 100%;
+    text-align: center;
+    margin: 0 30rpx;
+    background: #7ca7d2;
+    color: #fff;
+    border-radius: 6rpx;
+    font-size: 30rpx;
+}
+
+.commentFooter .disabled {
+    opacity: 0.3;
+}

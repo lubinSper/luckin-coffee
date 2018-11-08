@@ -1,0 +1,16 @@
+<view class="container address-search">
+    <view class="search">
+        <input bindinput="keyNameInputHandler" placeholder="请输入地址名称" value="{{keyName}}"></input>
+        <label bindtap="keyNameClearHandler" class="clear" id="keyNameClearIcon" wx:if="{{showKeyNameClear}}"></label>
+    </view>
+    <view class="nothing" wx:if="{{noSearchAddress}}">
+        <view class="icon"></view>
+        <view class="text">没有找到结果，试试其他地址吧~</view>
+    </view>
+    <view class="list">
+        <view bindtap="addressSelectedHandler" class="item" data-address="{{item}}" id="address_{{index}}" wx:for="{{searchAddressList}}" wx:key="{{ index }}">
+            <view class="name">{{item.name}}</view>
+            <view class="detail">{{item.address}}</view>
+        </view>
+    </view>
+</view>

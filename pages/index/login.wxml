@@ -1,0 +1,22 @@
+<view class="logo">
+    <image></image>
+    <view class="note" style="display:none">为了您的账户安全，请绑定手机</view>
+</view>
+<view class="form">
+    <view class="bt">
+        <input autoFocus="true" bindinput="mobileInput" class="mobile" confirmType="send" maxlength="11" placeholder="请输入手机号" placeholderClass="placeholder" type="number" value="{{mobile}}"></input>
+        <text bindtouchstart="clearMobileInput" class="clearInput {{clearBtnState}}"></text>
+    </view>
+    <view class="bt">
+        <input bindinput="verifycodeInput" class="verifycode" maxlength="6" placeholder="请输入手机验证码" placeholderClass="placeholder" type="number" value="{{verifycode}}"></input>
+        <button bindgetuserinfo="wxUserInfo" class="verifycode {{sendClass}} {{sendTextState}}" disabled="{{sendTextDisabled}}" id="getuserinfoBtn" openType="getUserInfo" wx:if="{{!authStatus}}">{{sendText}}</button>
+        <button bindtap="sendVerifycode" class="verifycode {{sendClass}} {{sendTextState}}" disabled="{{sendTextDisabled}}" id="sendVerifycodeBtn" wx:if="{{authStatus}}">{{sendText}}</button>
+    </view>
+    <view>
+        <button bindtap="login" class="btn {{submitState}}" id="loginBtn">确定</button>
+    </view>
+    <view class="text">
+        <text>点击确定，即表示已阅读并同意</text>
+        <text bindtap="memberAgreement" class="blue" id="memberAgreementBtn">《注册会员服务条款》</text>
+    </view>
+</view>

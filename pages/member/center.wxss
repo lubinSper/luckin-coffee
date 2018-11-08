@@ -1,0 +1,87 @@
+@import "../../assets/tpls/navItem/navItem.wxss";
+
+scroll-view {
+    background: #fff;
+    min-height: 100vh;
+}
+
+.top {
+    overflow: hidden;
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/background.png);
+    height: 278rpx;
+    display: flex;
+    box-sizing: border-box;
+    padding: 70rpx 10rpx;
+    position: relative;
+    background-size: 83% 118%;
+    background-color: #fff;
+    background-position-x: right;
+    background-position-y: -51rpx;
+    background-repeat: no-repeat;
+}
+
+.top::after {
+    content: '\20';
+    position: absolute;
+    top: 120rpx;
+}
+
+.top .avatarWrap {
+    width: 110rpx;
+    height: 110rpx;
+    margin: 0 34rpx 0 42rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 50rpx #ccc;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+
+.top .avatar image {
+    width: 100%;
+    height: 100%;
+}
+
+.top .text {
+    display: flex;
+    height: 110rpx;
+    font-size: 34rpx;
+    color: #333;
+    line-height: 130%;
+    word-break: break-all;
+    word-wrap: break-word;
+    flex: 1;
+    align-items: center;
+}
+
+.navList .navItem {
+    background: #fff;
+    color: #333;
+    border: none;
+}
+
+.navList .navItem .extra {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.member .navItem::before {
+    width: 38rpx;
+    height: 38rpx;
+    left: 42rpx;
+    top: 30rpx;
+    background-size: auto 100%;
+}
+
+.member .arrowsLeft::after {
+    right: 34rpx;
+}
+
+.advertLink {
+    text-align: center;
+    padding: 50rpx 30rpx;
+}
+
+.advertLink image {
+    width: 100%;
+    border-radius: 3rpx;
+}

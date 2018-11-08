@@ -1,0 +1,23 @@
+<view class="supplement">
+    <view class="top-space"></view>
+    <view class="item">
+        <view class="note">联系人</view>
+        <view class="area">
+            <input bindinput="nicknameInput" class="bt" maxlength="10" placeholder="用于取餐时对您的称呼"></input>
+        </view>
+    </view>
+    <view class="item">
+        <view class="note">性别</view>
+        <view class="area">
+            <radio-group bindchange="sexChange">
+                <label class="radio {{item.className}}" wx:for="{{sexAry}}" wx:key="{{item}}">
+                    <radio value="{{item.value}}"></radio>
+                    <text class="text">{{item.name}}</text>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view>
+        <button bindtap="submit" class="btn {{submitState}}" id="submitSupplementBtn">确定</button>
+    </view>
+</view>

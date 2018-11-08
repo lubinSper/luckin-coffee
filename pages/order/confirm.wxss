@@ -1,0 +1,508 @@
+page {
+    background-color: #fbfbfb;
+    padding-bottom: 168rpx;
+}
+
+.deliveryInfo {
+    display: flex;
+    height: 160rpx;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    background-color: #fff;
+    margin-bottom: 8rpx;
+}
+
+.deliveryInfo .switch-btn {
+    border: 1px #7ca7d2 solid;
+    border-radius: 200rpx;
+    font-size: 24rpx;
+    line-height: 64rpx;
+    padding: 3rpx;
+    height: 64rpx;
+    color: #7ca7d2;
+}
+
+.switch-btn .switch-btn-item {
+    padding: 0 20rpx;
+    display: inline-block;
+    border-radius: 100rpx;
+}
+
+.switch-btn .checked {
+    background: #7ca7d2;
+    color: #fff;
+}
+
+.deliveryInfo .timeInfo {
+    text-align: right;
+}
+
+.timeInfo .deliveryTip {
+    font-size: 26rpx;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 8rpx;
+    line-height: 32rpx;
+}
+
+.timeInfo .deliveryTip text {
+    padding-right: 26rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/slow.png) no-repeat right center;
+    background-size: 22rpx 22rpx;
+    font-weight: 500;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.timeInfo .aboutTimeTip {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.aboutTimeTip .aboutTime {
+    font-size: 42rpx;
+    color: #7ca7d2;
+}
+
+.addressInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30rpx;
+    background: #fff;
+    margin-bottom: 2rpx;
+}
+
+.addressInfo .addressType {
+    font-size: 26rpx;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 12rpx;
+    white-space: nowrap;
+}
+
+.addressInfo .addressLine {
+    width: 100%;
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png") no-repeat center right;
+    background-origin: content-box;
+    background-size: auto 28rpx;
+}
+
+.addressInfo .addressLine1_pick {
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 620rpx;
+}
+
+.addressInfo .addressLine2 {
+    font-size: 24rpx;
+    line-height: 28rpx;
+    color: #666;
+    margin-top: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 620rpx;
+}
+
+.addressInfo .addressLine1_sent {
+    background: url(https://static.luckincoffeecdn.com/mini/images/confirmOrder/icon_address.png) no-repeat left center;
+    background-size: 24rpx 24rpx;
+    padding-left: 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.addressInfo .addressLine1_sent .addressLine1Detail {
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 620rpx;
+}
+
+.addressInfo .addressLine1_sent .withTag {
+    max-width: 520rpx;
+}
+
+.addressInfo .addressLine1_sent .addressTag {
+    font-size: 20rpx;
+    padding: 0 6rpx;
+    border: 1px solid #7ca7d2;
+    background-color: #7ca7d2;
+    border-radius: 6rpx;
+    line-height: 30rpx;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80rpx;
+    margin-left: 18rpx;
+}
+
+.addressInfo .addressLine2_sent {
+    background: url(https://static.luckincoffeecdn.com/mini/images/confirmOrder/icon_phone.png) no-repeat left center;
+    background-size: 24rpx 24rpx;
+    padding-left: 40rpx;
+}
+
+.eatwayInfo {
+    height: 120rpx;
+    background-color: #fff;
+    padding: 0 140rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333;
+    margin-bottom: 2rpx;
+}
+
+.eatwayInfo .eatwayItem {
+    display: flex;
+    align-items: center;
+}
+
+.eatwayItem .checkItem {
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/unselected.png") no-repeat center;
+    background-size: 100%;
+    width: 38rpx;
+    height: 38rpx;
+    margin-right: 30rpx;
+}
+
+.eatwayItem .checked {
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/selected.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.orderInfo {
+    padding: 30rpx 30rpx 0 30rpx;
+    background-color: #fff;
+}
+
+.orderInfo .orderLabel {
+    font-size: 26rpx;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+
+.orderInfo .orderItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32rpx;
+}
+
+.orderInfo .orderItem:last-child {
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.itemInfo .itemName {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 700;
+    max-width: 472rpx;
+}
+
+.itemInfo .itemDesc {
+    font-size: 20rpx;
+    color: #333;
+    max-width: 480rpx;
+}
+
+.itemInfo .itemDesc_dispatchFee {
+    color: #e06e11;
+}
+
+.orderItem .itemAmountPrice {
+    font-size: 26rpx;
+    color: #333;
+    display: flex;
+}
+
+.itemAmountPrice .itemAmount {
+    min-width: 60rpx;
+    margin-right: 16rpx;
+}
+
+.itemAmountPrice .itemPrice {
+    min-width: 86rpx;
+    text-align: right;
+    font-weight: 700;
+}
+
+.orderFreight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderFreight .orderFreightLabel {
+    font-size: 14px;
+    color: #333;
+}
+
+.orderFreight .deliveryMoney {
+    font-size: 13px;
+    color: #333;
+    font-weight: 700;
+}
+
+.orderDiscount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderDiscount .discountName {
+    font-size: 14px;
+    color: #7ca7d2;
+}
+
+.orderDiscount .discountMoney {
+    font-size: 13px;
+    color: #7ca7d2;
+    font-weight: 700;
+}
+
+.orderTotalPrice {
+    background-color: #fff;
+    height: 104rpx;
+    line-height: 104rpx;
+    text-align: right;
+    padding: 0 30rpx;
+    color: #333;
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+}
+
+.orderTotalPrice .discountPrice {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.remarkInfo {
+    height: 104rpx;
+    line-height: 104rpx;
+    padding: 0 30rpx;
+    background: #fff url("https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png") no-repeat center right;
+    background-origin: content-box;
+    background-size: auto 28rpx;
+    font-size: 28rpx;
+    color: #333;
+    margin-bottom: 22rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remarkInfo .remarkMsg {
+    font-size: 26rpx;
+    margin-right: 28rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 370rpx;
+}
+
+.agreementInfo {
+    padding: 0 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.agreementInfo .payAgree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 22rpx;
+    color: #666;
+    line-height: 32rpx;
+    margin-bottom: 12rpx;
+}
+
+.agreementInfo .payAgree .payAgreeMsg {
+    display: flex;
+    align-items: center;
+    padding-left: 16rpx;
+}
+
+.agreementInfo .payAgree .payAgreeCheckbox {
+    width: 28rpx;
+    height: 28rpx;
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/selected.png") no-repeat;
+    background-size: cover;
+}
+
+.agreementInfo .payAgree .unAgree {
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/unselected.png") no-repeat;
+    background-size: cover;
+}
+
+.agreementInfo .payAgree navigator {
+    color: #7ca7d2;
+}
+
+.agreementInfo .invoiceTip {
+    font-size: 22rpx;
+    color: #999;
+    line-height: 32rpx;
+}
+
+.confirmFooter {
+    z-index: 10000;
+    width: 100%;
+    height: 104rpx;
+    position: fixed;
+    bottom: 0;
+}
+
+.withTips {
+    height: 160rpx;
+}
+
+.confirmFooter .confirmTips {
+    height: 56rpx;
+    line-height: 56rpx;
+    opacity: 0.95;
+    background: #f3ece8;
+    font-size: 22rpx;
+    color: #e2751c;
+    text-align: center;
+}
+
+.confirmFooter .confirmOrderPayInfo {
+    background-color: #fff;
+    height: 104rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -1px 5px 0 rgba(42,76,126,0.06);
+}
+
+.confirmFooter .confirmOrderPayInfo .priceContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30rpx;
+}
+
+.confirmOrderPayInfo .priceContent .priceDesc {
+    color: #e06e11;
+    font-size: 20rpx;
+}
+
+.confirmOrderPayInfo .priceContent .cartTotalLabel {
+    color: #666;
+    font-size: 28rpx;
+    margin-right: 10rpx;
+}
+
+.confirmOrderPayInfo .priceContent .cartTotalPriceUnit {
+    font-size: 36rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.confirmOrderPayInfo .priceContent .cartTotalPrice {
+    color: #333;
+    font-size: 48rpx;
+    font-weight: 700;
+}
+
+.confirmFooter .confirmOrderPayInfo .cartCheckout {
+    height: 100%;
+    width: 260rpx;
+    font-size: 32rpx;
+    color: #fff;
+    background-color: #7ca7d2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmFooter .confirmOrderPayInfo .disabledCheckout {
+    opacity: 0.3;
+}
+
+.discountInfo {
+    background: #fff;
+    margin-bottom: 10rpx;
+    font-size: 28rpx;
+    color: #4a4a4a;
+}
+
+.discountInfo .discountSwitch {
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.discountInfo .coffeeBankLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+    border-top: 1px solid #e6e6e6;
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.discountInfo .couponLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+    border-top: 1px solid #e6e6e6;
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.discountInfo .usedDiscount {
+    padding-right: 42rpx;
+    font-size: 26rpx;
+    color: #7ca7d2;
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png") no-repeat center right;
+    background-size: 26rpx 26rpx;
+}
+
+.discountInfo .usableCount {
+    padding-right: 42rpx;
+    font-size: 26rpx;
+    color: #e06e11;
+    background: url("https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png") no-repeat center right;
+    background-size: 26rpx 26rpx;
+}
+
+.discountInfo .disabled {
+    padding-right: 10rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.discountInfo .discountTip {
+    font-size: 20rpx;
+    color: #fff;
+    letter-spacing: 1rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #e06e11;
+    padding: 0 8rpx;
+    border-radius: 4rpx;
+    margin-left: 18rpx;
+}

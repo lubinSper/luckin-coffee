@@ -1,0 +1,70 @@
+@import "../../assets/tpls/navItem/navItem.wxss";
+
+.memberInfo .navItem {
+    font-size: 28rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+    padding: 0 40rpx;
+}
+
+.memberInfo .navList {
+    margin-bottom: 60rpx;
+}
+
+.memberInfo .listLeft {
+    color: #666;
+    width: 136rpx;
+}
+
+.memberInfo .navItem text {
+    flex: none;
+}
+
+.memberInfo .navItem .extra {
+    margin: 0;
+    color: #333;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.memberInfo .navItem .content-name {
+    overflow: hidden;
+}
+
+.memberInfo .navItem .extra .content-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: right;
+}
+
+.memberInfo .navItem .avatarWrap {
+    width: 68rpx;
+    height: 68rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 50rpx #ccc;
+    overflow: hidden;
+    margin-top: 21.4rpx;
+    flex: none;
+}
+
+.avatarWrap image {
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.btnWrap {
+    margin: 0 40rpx;
+}
+
+.memberInfo .btnWrap button {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 6rpx;
+    background: #7ca7d2;
+    border: none;
+    font-size: 30rpx;
+}

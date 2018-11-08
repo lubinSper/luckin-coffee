@@ -1,0 +1,7 @@
+<template name="emptyList">
+    <view class="emptyList">
+        <view class="emptyBg {{emptyData.class}}"></view>
+        <text class="emptyTips">{{emptyData.tips}}</text>
+        <button bindtap="emptyEventBind" class="emptyBtn" wx:if="{{emptyData.btnText}}">{{emptyData.btnText}}</button>
+    </view>
+</template>

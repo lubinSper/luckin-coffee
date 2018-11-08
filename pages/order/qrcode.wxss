@@ -1,0 +1,29 @@
+.qr-block {
+    text-align: center;
+    font-size: 48rpx;
+    padding-top: 40rpx;
+    border-top: 1px solid #f1f1f1;
+    margin-bottom: 24rpx;
+}
+
+.canvas-box {
+    text-align: left;
+    width: 360rpx;
+    height: 360rpx;
+    margin: 85rpx auto 40rpx auto;
+}
+
+.canvas-box .qrcode {
+    width: 360rpx;
+    height: 360rpx;
+    display: block;
+}
+
+.qr-block .emph {
+    color: #7CA7D2;
+}
+
+.qr-desc {
+    text-align: center;
+    font-size: 36rpx;
+}

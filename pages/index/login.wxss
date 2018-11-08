@@ -1,0 +1,150 @@
+.logo {
+    text-align: center;
+    margin: 80rpx 0 50rpx;
+}
+
+.logo image {
+    width: 215rpx;
+    height: 215rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/login/logo.png);
+    background-size: cover;
+}
+
+.logo .note {
+    text-align: center;
+    color: #3f5e8b;
+    font-size: 24rpx;
+}
+
+.form {
+    margin: 0 100rpx;
+}
+
+.form view {
+    margin-bottom: 10rpx;
+}
+
+.form view.bt {
+    border-bottom: 1rpx solid #eee;
+    position: relative;
+}
+
+.form input {
+    padding: 20rpx 0;
+    font-size: 32rpx;
+}
+
+.form text.clearInput {
+    width: 30rpx;
+    height: 50rpx;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 30rpx;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/login/icon_remove.png');
+}
+
+.form input.verifycode {
+    width: 500rpx;
+    margin-top: 40rpx;
+}
+
+.form .placeholder {
+    color: #bfbfbf;
+}
+
+.form button.verifycode {
+    position: absolute;
+    right: 0;
+    top: 25rpx;
+    width: 156rpx;
+    line-height: 44rpx;
+    font-size: 22rpx;
+    padding: 0rpx 15rpx;
+    color: #80AAD3;
+    background: #fff;
+    border-radius: 50rpx;
+    border: 1px solid #80AAD3;
+    z-index: 2;
+}
+
+.form button.verifycode:after {
+    border: none;
+}
+
+.form button.verifycode.disabled {
+    opacity: 0.4;
+}
+
+.form .verifycode.unsend {
+    color: #80AAD3;
+    border-color: #80AAD3;
+}
+
+.form .verifycode.send {
+    color: #BAB2A7;
+    border-color: #F0EEEB;
+    background: #F0EEEB;
+}
+
+.form .btn,.form button[disabled].btn {
+    margin-top: 38rpx;
+    background-color: #7CA7D2;
+    color: #fff;
+    font-size: 32rpx;
+    border: none;
+}
+
+.form .btn.disabled {
+    opacity: 0.4;
+}
+
+.form .text {
+    margin-top: 15rpx;
+    font-size: 22rpx;
+    text-align: center;
+    color: #666;
+}
+
+.form .blue {
+    color: #3f5e8b;
+}
+
+.wechat {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+.wechat .text {
+    z-index: 99;
+    color: #888;
+    font-size: 20rpx;
+    background-color: #fff;
+    width: 200rpx;
+    margin: 0 auto;
+    margin-bottom: -18rpx;
+}
+
+.wechat .imagearea {
+    z-index: 90;
+    border-top: 1rpx solid #eee;
+    margin: 0 40rpx;
+}
+
+.wechat image {
+    margin: 30rpx 0;
+    width: 100rpx;
+    height: 100rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/login/wechat.png);
+    background-size: cover;
+}
+
+.hide {
+    display: none;
+    opacity: 0;
+}

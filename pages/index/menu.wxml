@@ -1,0 +1,238 @@
+<view class="box">
+    <view class="address-box send" wx:if="{{delivery==='sent'}}">
+        <view class="icon"></view>
+        <view class="address">
+            <view bindtap="gotoSelectAddress" class="detail" data-delivery="sent" id="addressDetail">{{addressInfo.address}} {{addressInfo.addrDetail}}</view>
+            <view bindtap="gotoSelectAddress" class="info" data-delivery="sent" id="addressInfo">
+                <text class="mobile">{{addressInfo.tel}}</text>
+                <text class="name">{{addressInfo.userName}}{{addressInfo.sex}}</text>
+            </view>
+            <view class="note">
+                <text class="fee" wx:if="{{dispatchMsg}}">{{dispatchMsg}}</text>
+                <text class="slow">慢必赔</text>
+                <label bindtap="alertDispathMsg" class="slow-icon" id="slowTipIcon"></label>
+            </view>
+        </view>
+        <view class="switch">
+            <label bindtap="gotoSelectAddress" data-delivery="pick" id="addressSwitch_pick">自提</label>
+            <label bindtap="gotoSelectAddress" class="selected" data-delivery="sent" id="addressSwitch_sent">外送</label>
+        </view>
+    </view>
+    <view class="address-box pick" wx:else>
+        <view class="icon"></view>
+        <view bindtap="gotoSelectAddress" class="address" data-delivery="pick" id="address_pick">
+            <view class="detail">{{shopInfo.name}}</view>
+            <view class="info">
+                <text class="name" wx:if="{{shopInfo.distanceText}}">距您 {{shopInfo.distanceText}}</text>
+                <text class="name" wx:else>{{shopInfo.address}}</text>
+            </view>
+        </view>
+        <view class="switch">
+            <label bindtap="gotoSelectAddress" class="selected" data-delivery="pick" id="addressSwitch_pick">自提</label>
+            <label bindtap="gotoSelectAddress" data-delivery="sent" id="addressSwitch_sent">外送</label>
+        </view>
+    </view>
+    <view class="banner-box" wx:if="{{null!==adPos&&adPos.length>0}}">
+        <swiper autoplay="{{autoplay}}" circular="true" class="banner-swiper-box" duration="{{duration}}" indicatorActiveColor="#fff" indicatorColor="rgba(255, 255, 255, 0.5)" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item wx:for="{{adPos}}" wx:key="{{ item.index }}">
+                <image bindtap="goImgLink" class="banner-image" data-clickurl="{{item.clickUrl}}" src="{{item.sourceUrl}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="location-faild" wx:if="{{false===locationSuccess}}">
+        <view class="text">哎呀，地址定位失败！</view>
+        <view class="text">请开启定位和微信APP位置权限</view>
+        <view>
+            <button bindtap="openSettingHandler" class="btn" openType="openSetting">开启定位</button>
+        </view>
+    </view>
+    <view class="location-faild" wx:elif="{{cityNoShop}}">
+        <view class="text">{{cityNoShopText}}</view>
+        <view>
+            <button bindtap="gotoCitySelect" class="btn" id="selectCityBtn">切换城市</button>
+        </view>
+    </view>
+    <view class="location-faild" wx:elif="{{areaNoShop}}">
+        <view class="text">{{areaNoShopText}}</view>
+        <view>
+            <button bindtap="gotoSelectAddress" class="btn" id="selectShopBtn_noShop">选择门店</button>
+        </view>
+    </view>
+    <view class="location-faild" wx:elif="{{hasTakeoutKitchen}}">
+        <view class="text">{{hasTakeoutKitchenText}}</view>
+        <view>
+            <button bindtap="gotoSelectAddress" class="nearby-btn" data-delivery="sent" id="selectAddress_sent">选外卖 慢必赔</button>
+        </view>
+        <view class="nearby-or">或</view>
+        <view bindtap="gotoSelectAddress" class="nearyby-text" data-delivery="pick" id="selectAddress_pick">选择就近门店自提
+        <label class="right-arrow"></label>
+        </view>
+    </view>
+    <block wx:elif="{{!products||products.length===0}}">
+        <view class="location-faild" wx:if="{{null===products}}">
+            <view class="text">加载中···</view>
+        </view>
+        <view class="location-faild" wx:else>
+            <view class="text">{{hasNoProductText}}</view>
+            <view>
+                <button bindtap="gotoSelectAddress" class="btn" id="selectShopBtn_noProd">选择门店</button>
+            </view>
+        </view>
+    </block>
+    <view class="content-box" wx:else>
+        <view class="menu-box">
+            <scroll-view scrollY class="menu-view" scrollIntoView="menu-{{productActiveIndex}}" style="height: {{contentHeight}}px">
+                <view bindtap="tapMenuItem" class="menu-item {{productActiveIndex===idx?'active':''}}" data-id="{{idx}}" id="menu-{{idx}}" wx:for="{{products}}" wx:for-index="idx" wx:key="kindName">
+                    <view class="text">{{item.kindName}}</view>
+                    <view class="label" style="background: {{item.timeDiscountInfo.bgColor}}" wx:if="{{item.isTimeDiscount}}">
+                        <text style="color: {{item.timeDiscountInfo.nameColor}}; background: {{item.timeDiscountInfo.bgColor}}">{{item.timeDiscountInfo.name}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="product-box">
+            <scroll-view scrollY bindscroll="productScrollHandler" class="product-view" scrollTop="{{currentScrollTop}}" style="height: {{contentHeight}}px">
+                <view wx:for="{{products}}" wx:for-index="idx" wx:key="kindName">
+                    <view class="product-category" id="kind-{{idx}}">
+                        <view class="product-category-text">
+                            <view class="title-box">
+                                <text class="title">{{item.kindName}}</text>
+                                <image class="title-icon" mode="aspectFit" src="{{item.displayedIconUrl}}" wx:if="{{item.displayedIconUrl&&!item.kindDescIsOnSale}}"></image>
+                            </view>
+                            <view class="sub-box" wx:if="{{item.kindDesc}}">
+                                <text class="subtitle" wx:if="{{item.kindDescIsOnSale}}">
+                                    <text class="colored">{{item.kindDescOnSaleFirst}}</text>
+                                    <text wx:if="{{item.kindDescOnSaleRest}}"> / {{item.kindDescOnSaleRest}}</text>
+                                </text>
+                                <text class="subtitle" wx:elif="{{!item.displayedIconUrl&&!item.kindDescIsOnSale}}">{{item.kindDesc}}</text>
+                            </view>
+                        </view>
+                        <view class="title-hr {{item.kindDesc?'sub-hr':''}}"></view>
+                    </view>
+                    <view bindtap="addShoppingCartForIndex" class="product-item-box {{product.maxAmount===0?'saleout':''}}" data-pop="true" data-product="{{product}}" id="productItem_{{product.productId}}" wx:for="{{item.productList}}" wx:for-item="product" wx:key="productId">
+                        <view class="product-mask"></view>
+                        <view class="product-pic-box">
+                            <image class="product-pic" src="{{product.defaultPicUrl}}"></image>
+                            <view class="product-disc" wx:if="{{product.promotionMsg}}">{{product.promotionMsg}}</view>
+                            <view class="sell-out-box" wx:if="{{product.maxAmount==0}}">
+                                <text class="sell-out-msg">售罄</text>
+                            </view>
+                        </view>
+                        <view class="product-info">
+                            <view class="product-title">
+                                <text class="product-name">{{product.name}}</text>
+                                <view class="product-tag" wx:if="{{product.tagList}}">
+                                    <text class="product-tag-item" style="{{tagItem.bgColor?'background-color:'+tagItem.bgColor:''}}" wx:for="{{product.tagList}}" wx:for-item="tagItem" wx:key="content">{{tagItem.content}}</text>
+                                </view>
+                            </view>
+                            <text class="product-ename">{{product.enName}}</text>
+                            <text class="product-ename" wx:if="{{product.detailDesc}}">默认：{{product.detailDesc}}</text>
+                            <view class="product-bottom">
+                                <text class="product-select" wx:if="{{product.standardMulti==1&&product.standard.length>1}}">换口味</text>
+                                <view class="product-price" wx:if="{{product.initialPrice==product.discountPrice}}">
+                                    <text class="bold">
+                                        <text class="unit">￥</text>{{product.initialPrice}}</text>
+                                </view>
+                                <view class="product-price" wx:else>
+                                    <text class="after">
+                                        <text class="unit">￥</text>{{product.discountPrice}}</text>
+                                    <text class="before">￥{{product.initialPrice}}</text>
+                                </view>
+                                <view>
+                                    <label class="product-limit" wx:if="{{product.stockSurplusAmount&&product.stockSurplusAmount>0}}">剩<text class="num-red">{{product.stockSurplusAmount}}</text>{{product.unit}}</label>
+                                    <label catchtap="addShoppingCartForIndex" class="product-add" data-product="{{product}}" id="productAddBtn_{{product.productId}}"></label>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <block wx:if="{{showDetailLayer}}">
+        <view class="product-detail-mask"></view>
+        <view animation="{{detailLayerAnimateData}}" bindtap="hideProductDetailLayer" class="product-detail" data-close="true" id="productDetailLayer">
+            <view class="layer-content">
+                <view catchtap="hideProductDetailLayer" class="close" data-close="true" id="productDetailLayerCloseBtn"></view>
+                <view class="top" style="background: url({{product.defaultPicUrl}}); background-size: cover;">
+                    <view class="content">
+                        <view class="name">{{product.name}}</view>
+                        <view class="enname">{{product.enName}}</view>
+                    </view>
+                </view>
+                <scroll-view class="middle" scrollY="true">
+                    <view class="item" wx:if="{{product.standardCodeItem&&product.standardCodeItem.length>0}}">
+                        <view class="label">规格</view>
+                        <view class="tags">
+                            <text catchtap="standardSwitchHandler" class="{{item.checked===1?'selected':''}} {{item.isInventory===0?'disabled':''}}" data-code="{{item.code}}" data-inventory="{{item.isInventory}}" id="standard_{{item.code}}_{{product.productId}}" wx:for="{{product.standardCodeItem}}" wx:key="{{ item.code }}">{{item.name}}</text>
+                        </view>
+                    </view>
+                    <view class="item" wx:if="{{product.temperAttributeItem&&product.temperAttributeItem.length>0}}">
+                        <view class="label">温度</view>
+                        <view class="tags">
+                            <text catchtap="temperSwitchHandler" class="{{item.checked===1?'selected':''}} {{item.isInventory===0?'disabled':''}}" data-code="{{item.code}}" data-inventory="{{item.isInventory}}" id="temper_{{item.code}}_{{product.productId}}" wx:for="{{product.temperAttributeItem}}" wx:key="{{ item.code }}">{{item.name}}</text>
+                        </view>
+                    </view>
+                    <view class="item" wx:for="{{product.additionList}}" wx:for-index="additionIndex" wx:for-item="addition" wx:key="additionIndex">
+                        <view class="label">{{addition.typeName}}</view>
+                        <view class="tags">
+                            <block wx:if="{{addition.typeList}}" wx:for="{{addition.typeList}}" wx:for-index="typeAryIndex" wx:for-item="typeAryItem" wx:key="typeAryIndex">
+                                <text catchtap="additionSwitchHandler" class="{{typeItem.checked===1?'selected':''}} {{typeItem.isInventory===0?'disabled':''}}" data-code="{{typeItem.code}}" data-index="{{additionIndex}}" data-inventory="{{typeItem.isInventory}}" id="addition_{{typeItem.code}}_{{product.productId}}" wx:for="{{typeAryItem}}" wx:for-index="typeIndex" wx:for-item="typeItem" wx:key="typeIndex">{{typeItem.name}}{{typeItem.price!==0?typeItem.price+'元':''}}</text>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="note" wx:if="{{product.productCommentList&&product.productCommentList.length>0}}">
+                        <view class="title">大咖说</view>
+                        <view class="say" wx:for="{{product.productCommentList}}" wx:key="{{ index }}">
+                            <view class="head" style="background: url({{item.picUrl}}); background-size: cover;"></view>
+                            <view class="content">
+                                <view>
+                                    <text class="name">{{item.celeName}}</text>
+                                    <text class="owner" style="background: {{item.titleBackground}}; color: {{item.titleColor}}">{{item.celeTitle}}</text>
+                                </view>
+                                <view class="words">
+                                    <text>{{item.celeComment}}</text>
+                                </view>
+                                <view class="time">{{item.celeTimeStr}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="desc" wx:if="{{product.desc}}">
+                        <view class="title">商品描述</view>
+                        <view class="content">
+                            <view wx:for="{{product.descAry}}" wx:key="index">{{item}}</view>
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="bottom">
+                    <view class="opera">
+                        <view class="left">
+                            <view class="price">￥
+                <text class="bold">{{product.discountPrice}}</text>
+                            </view>
+                            <view class="desc">{{product.totalPriceDes}}</view>
+                        </view>
+                        <view class="right">
+                            <label class="product-limit" wx:if="{{product.stockSurplusAmount&&product.stockSurplusAmount>0}}">剩<text class="num-red">{{product.stockSurplusAmount}}</text>{{product.unit}}</label>
+                            <label bindtap="decrementProductCountHandler" class="decrement" id="decrementIcon"></label>
+                            <text class="num">{{detailProductCount}}</text>
+                            <label bindtap="incrementProductCountHandler" class="increment" id="incrementIcon"></label>
+                        </view>
+                    </view>
+                    <view class="buttons">
+                        <view bindtap="gotoWallet" class="btn tip-btn" wx:if="{{product.promotionMsg}}">
+                            <text class="icon"></text>
+                            <text>{{product.promotionMsg}}</text>
+                        </view>
+                        <view bindtap="addShoppingCartForDetail" class="btn add-btn" id="addCartBtn">
+                            <text class="icon"></text>
+                            <text>加入购物车</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="layer-content-flag"></view>
+        </view>
+    </block>
+</view>
+<view id="fixed-helper"></view>

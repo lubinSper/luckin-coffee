@@ -1,0 +1,19 @@
+<import src="../../assets/tpls/navItem/navItem.wxml"></import>
+<view class="member container">
+    <scroll-view>
+        <view bindtap="handlerUserAreaTap" class="top flex-row arrowsLeft" id="userAreaTap">
+            <view class="avatar avatarWrap">
+                <image mode="aspectFill" src="{{userAvatar}}" wx:if="{{userAvatar}}"></image>
+            </view>
+            <view class="text">
+                <text>{{userName}}</text>
+            </view>
+        </view>
+        <view class="navList">
+            <template is="navItem" data="{{item:item}}" wx:for="{{navListFirst}}" wx:key="index"></template>
+        </view>
+        <view class="advertLink" data-id="advertLink">
+            <image bindtap="invitationPeople" mode="widthFix" src="{{advertImage}}" wx:if="{{advertImage}}"></image>
+        </view>
+    </scroll-view>
+</view>

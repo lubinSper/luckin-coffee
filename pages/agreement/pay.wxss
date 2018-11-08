@@ -1,0 +1,38 @@
+.pay-agreement {
+    text-align: justify;
+}
+
+.hide {
+    display: none;
+}
+
+.paymentProtocol {
+    border-top: none!important;
+    padding-top: 0!important;
+}
+
+.paymentProtocolTip {
+    font-size: 26rpx;
+    color: #808080;
+    padding: 24rpx 30rpx;
+    background: #fafafa;
+}
+
+.paymentProtocolBook {
+    padding: 60rpx 30rpx;
+}
+
+.paymentProtocolBookTitle {
+    font-size: 36rpx;
+    color: #404040;
+    padding-bottom: 60rpx;
+}
+
+.paymentProtocolBookClause {
+    font-size: 26rpx;
+    color: #404040;
+}
+
+.mb40 {
+    margin-bottom: 40rpx;
+}

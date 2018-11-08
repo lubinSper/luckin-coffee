@@ -1,0 +1,26 @@
+module.exports = ({
+    coloredTitle: getColoredTitle,
+});
+
+function getColoredTitle(title) {
+    var arr = [];
+    title.split('{{').map((function(item) {
+        var tempItem = ({});
+        if (item.indexOf('}}') > 0) {
+            arr.push(({
+                'val': item.split('}}')[(0)],
+                'key': 'highlight',
+            }));
+            arr.push(({
+                'val': item.split('}}')[(1)],
+                'key': 'normal',
+            }))
+        } else {
+            arr.push(({
+                'val': item,
+                'key': 'normal',
+            }))
+        }
+    }));
+    return (arr)
+};

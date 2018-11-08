@@ -1,0 +1,20 @@
+<view class="commentType">
+    <view class="commentTypeMsg {{orderEvaluateList[0].feel?'':'dissatisfied'}}">{{orderEvaluateList[0].feel?'满意':'不满意'}}</view>
+</view>
+<view class="commentContent">
+    <view wx:for="{{orderEvaluateList}}" wx:key="comment_{{index}}">
+        <view class="commentLabel" wx:if="{{item.tags}}">{{item.tags}}</view>
+        <view class="commentDesc" wx:if="{{item.content||item.evaluateImgs}}">
+            <view class="commentMsg" wx:if="{{item.content}}">{{item.content}}</view>
+            <view class="commentImg" wx:if="{{item.evaluateImgs}}">
+                <image mode="scaleToFill" src="{{img}}" wx:for="{{item.evaluateImgList}}" wx:for-index="idx" wx:for-item="img" wx:key="img_{{idx}}"></image>
+            </view>
+            <view class="commentTime">{{item.time}}</view>
+        </view>
+        <view class="commentReply" wx:if="{{item.replyContent}}">
+            <view class="icon"></view>
+            <view class="replyContent">客服中心回复：{{item.replyContent}}</view>
+            <view class="replyTime">{{item.replyTime}}</view>
+        </view>
+    </view>
+</view>

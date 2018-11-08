@@ -1,0 +1,10 @@
+<view class="qr-block">
+    <text class="qr-title">取餐码：<text class="emph">{{takeMealInfo.code}}</text>
+    </text>
+</view>
+<view class="qr-desc">
+    <text>{{takeMealDesc}}</text>
+</view>
+<view class="canvas-box">
+    <image class="qrcode" id="qrcodeBox" src="{{imageData}}"></image>
+</view>

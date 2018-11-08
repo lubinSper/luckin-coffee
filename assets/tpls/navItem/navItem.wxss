@@ -1,0 +1,63 @@
+/*! Import by _C[0], whose real path we cannot found. */
+
+/*! Import end */
+
+/*! Import by _C[1], whose real path we cannot found. */
+.avatarWrap {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/avatarWrap.png);
+}
+
+.arrowsLeft:after {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/arrowsLeft.png);
+}
+
+.coupon:before {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/coupon.png);
+}
+
+.receipt:before {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/receipt.png);
+}
+
+.customerService::before {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/service.png);
+}
+
+.getAddress:before {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/address.png);
+}
+
+.wallet:before {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/center/wallet.png);
+}
+/*! Import end */
+.navItem {
+    display: flex;
+    font-size: 28rpx;
+    color: #666;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-left: 100rpx;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.navItem text {
+    flex: 1 1 0;
+}
+
+.navItem .extra {
+    margin-right: 64rpx;
+}
+
+.navItem::before {
+    width: 52rpx;
+    height: 52rpx;
+    left: 20rpx;
+    top: 24rpx;
+    background-size: cover;
+}
+
+.navItem.hideBefore,.hideBefore .navItem {
+    padding-left: 30rpx;
+}

@@ -1,0 +1,89 @@
+.city {
+    height: 100vh;
+}
+
+.city .curr {
+    line-height: 88rpx;
+    background: #fff;
+}
+
+.city .curr .location-icon {
+    display: inline-block;
+    width: 24rpx;
+    height: 24rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/location.png) center no-repeat;
+    background-size: cover;
+    margin-left: 30rpx;
+    margin-right: 38rpx;
+}
+
+.city .curr .name {
+    color: #7CA7D2;
+    font-size: 30rpx;
+}
+
+.city .curr .note {
+    font-size: 24rpx;
+    margin-left: 15px;
+    color: #999;
+}
+
+.city scroll-view {
+    height: 100vh;
+}
+
+.city .block .letter {
+    line-height: 46rpx;
+    padding-left: 30rpx;
+    color: #999;
+    font-size: 28rpx;
+    background: #f8f8f8;
+}
+
+.city .block .city-item {
+    line-height: 88rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+    margin-left: 30rpx;
+}
+
+.city .block .city-item .check {
+    display: inline-block;
+    text-align: center;
+    width: 32rpx;
+    margin-right: 30rpx;
+}
+
+.city .block .city-item .check .check-icon {
+    display: inline-block;
+    width: 32rpx;
+    height: 24rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/right.png) center no-repeat;
+    background-size: cover;
+}
+
+.city .block .city-item .city-name {
+    background: #fff;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.city .quick {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50rpx;
+    height: 100vh;
+    text-align: center;
+    color: #666;
+}
+
+.city .quick .list {
+    padding-top: 200rpx;
+}
+
+.city .quick .item {
+    display: block;
+    padding: 10rpx 0;
+    font-size: 26rpx;
+}

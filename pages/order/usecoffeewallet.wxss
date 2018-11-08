@@ -1,0 +1,104 @@
+page {
+    background: #fbfbfb;
+    color: #333;
+    font-size: 26rpx;
+    padding-bottom: 120rpx;
+}
+
+.order-desc {
+    font-size: 26rpx;
+    color: #999999;
+    padding: 22rpx 0 0;
+    text-align: center;
+}
+
+.order-desc .emph {
+    color: #151515;
+}
+
+.order-items.is-ipx {
+    padding-bottom: 68rpx;
+}
+
+.item-wrap {
+    background: #fff;
+    margin: 20rpx;
+    padding: 36rpx 30rpx;
+    position: relative;
+    box-shadow: 0rpx 4rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.item-title {
+    font-weight: bold;
+    font-size: 30rpx;
+    padding-bottom: 8rpx;
+}
+
+.item-amount {
+    position: absolute;
+    right: 36rpx;
+    top: 48rpx;
+    font-size: 26rpx;
+}
+
+.item-desc {
+    font-size: 20rpx;
+    color: #999;
+}
+
+.use-wallet-item {
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 28rpx;
+}
+
+.use-wallet-item.nope {
+    color: #7CA7D2;
+}
+
+.use-wallet-item .discount {
+    position: absolute;
+    right: 32rpx;
+    font-size: 26rpx;
+    color: #7CA7D2;
+    bottom: 34rpx;
+}
+
+.usewallet-footer {
+    z-index: 10000;
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.usewallet-footer .btn-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 13rpx;
+}
+
+.usewallet-footer .btn {
+    height: 84rpx;
+    width: 100%;
+    font-size: 32rpx;
+    color: #fff;
+    background: #7CA7D2;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 13rpx;
+}
+
+.usewallet-footer .btn.normal {
+    border: 1px solid #7CA7D2;
+    background: #fff;
+    color: #7CA7D2;
+    border-radius: 3px;
+}

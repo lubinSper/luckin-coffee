@@ -1,0 +1,52 @@
+<template name="cardItem">
+    <view class="itemWrap">
+        <view class="itemBorder">
+            <view class="itemBorder1">
+                <view bindtap="radioIsChecked" class="content" data-index="{{index}}" data-radio="{{item.radio}}">
+                    <view class="contentLeft">
+                        <view class="leftWrap">
+                            <view class="leftNum">
+                                <text class="money" wx:if="{{item.type==='face'?true:false}}">¥</text>
+                                <text class="num">{{item.value}}</text>
+                                <text class="discount" wx:if="{{item.type==='discount'?true:false}}">
+                                    <text>{{item.num1}}</text>折</text>
+                            </view>
+                            <text class="leftText wordEllipsis">{{item.desc}}</text>
+                        </view>
+                    </view>
+                    <view class="contentRight">
+                        <view class="rightText">
+                            <view class="title wordEllipsis">{{item.name}}</view>
+                            <view class="time wordEllipsis">{{item.validDate}}</view>
+                        </view>
+                        <view class="radioWrap">
+                            <view class="radio {{item.radio?'checked':''}}" data-index="{{index}}" data-radio="{{item.radio}}" id="{{item.code}}" wx:if="{{radioDisplay}}"></view>
+                        </view>
+                        <view bindtap="toggle" class="ruleUse" data-close="{{item.display}}" data-ignore="ignore" data-index="{{index}}">
+                            <text class="ruleText" data-ignore="ignore">使用规则</text>
+                            <text class="arrow {{item.display?'':'rotate'}}" data-ignore="ignore"></text>
+                        </view>
+                    </view>
+                </view>
+                <view class="info" style="{{item.display?'display: none':''}}">
+                    <view class="infoText">{{item.detailDescList[0]}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../assets/tpls/emptyList/emptyList.wxml"></import>
+<view class="coupon">
+    <view class="couponAvailable" wx:if="{{couponAvailable}}">可用优惠
+    <text>（{{couponNum}}张）</text>
+    </view>
+    <view class="couponAvailableBlock" wx:if="{{couponAvailable}}"></view>
+    <scroll-view class="couponWrap">
+        <template is="cardItem" data="{{item:item,index:index,radioDisplay:radioDisplay}}" wx:for="{{couponList}}" wx:key="index"></template>
+        <template is="emptyList" data="{{emptyData:emptyData}}" wx:if="{{emptyData}}"></template>
+    </scroll-view>
+    <view class="saveWrapBlock" wx:if="{{couponAvailable}}"></view>
+    <view class="saveWrap {{isIpx?'fix-iphonex-bottom':''}}" wx:if="{{couponAvailable}}">
+        <view bindtap="saveData" class="save" id="save">保存</view>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+.member-agreement {
+    background: #fff;
+    padding: 30rpx;
+    text-align: justify;
+    font-size: 28rpx;
+}
+
+.member-agreement .h0-title {
+    font-size: 36rpx;
+    padding: 50rpx 0 10rpx 0;
+}
+
+.member-agreement .h1-title {
+    font-size: 32rpx;
+    padding: 50rpx 0 12rpx 0;
+}
+
+.member-agreement text {
+    display: block;
+    padding-bottom: 20rpx;
+}
+
+.member-agreement .sign {
+    text-align: right;
+    padding: 24rpx 0 50rpx 0;
+}

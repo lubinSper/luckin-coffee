@@ -1,0 +1,18 @@
+<view>
+    <view class="success res-container" wx:if="{{orderStatus=='success'}}">
+        <view class="title">购买成功</view>
+        <view class="desc">{{amount}}杯已放入您的咖啡库</view>
+        <view class="btn-group">
+            <view bindtap="jumpWallet" class="btn normal">查看我的咖啡钱包</view>
+            <view bindtap="jumpMenu" class="btn color-dark" wx:if="{{paramFrom!=='order'}}">去喝一杯</view>
+            <view bindtap="naviBack" class="btn color-dark" wx:if="{{paramFrom=='order'}}">继续购买咖啡</view>
+        </view>
+    </view>
+    <view class="fail res-container" wx:if="{{orderStatus=='fail'}}">
+        <view class="title">购买失败</view>
+        <view class="desc">非常抱歉，请再次尝试</view>
+        <view class="btn-group">
+            <view bindtap="naviBackConfirm" class="btn color-dark">重试购买</view>
+        </view>
+    </view>
+</view>

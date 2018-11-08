@@ -1,0 +1,63 @@
+<view class="shoppingCart" wx:if="{{cart&&cart.productList.length>0&&shopInfo!=null}}">
+    <view class="cartBody">
+        <view class="cartContent">
+            <view class="cartItem" data-index="{{index}}" style="{{cartItem.itemStyle}}" wx:for="{{cart.productList}}" wx:for-item="cartItem" wx:key="{{index}}">
+                <view bindtouchend="removeEnd" bindtouchmove="recordMove" bindtouchstart="removeStart" class="cartItemInfo" data-index="{{index}}" data-item="{{cartItem}}" id="cartItem_{{index}}">
+                    <view bindtap="checkItemHandler" class="checkbox {{cartItem.checked?'checked':''}} {{cartItem.canCheck?'':'disabledCheck'}}" data-index="{{index}}" data-item="{{cartItem}}" id="cartCheckbox_{{index}}"></view>
+                    <view class="cartItemContent">
+                        <view class="itemName {{cartItem.canCheck?'':'disabled'}}">{{cartItem.name}}<view class="cart-promotionMsg" wx:if="{{cartItem.promotionMsg}}">{{cartItem.promotionMsg}}</view>
+                        </view>
+                        <view class="itemStandard {{cartItem.canCheck?'':'disabled'}}">{{cartItem.detailDesc}}</view>
+                        <view class="cartItemDetail">
+                            <view class="itemPrice {{cartItem.discountPrice!=cartItem.initialPrice?'redPrice':''}} {{cartItem.canCheck?'':'disabled'}} ">
+                                <text class="priceUnit">￥</text>
+                                <text>{{cartItem.discountPrice}}</text>
+                                <block wx:if="{{cartItem.discountPrice!=cartItem.initialPrice}}">
+                                    <text class="cart-discountPrice">￥</text>
+                                    <text class="cart-discountPrice">{{cartItem.initialPrice}}</text>
+                                </block>
+                            </view>
+                            <view class="cartItemQty">
+                                <view class="itemState {{cartItem.canCheck?'':'uncheck disabled'}}" wx:if="{{cartItem.unCheckMsg}}">{{cartItem.unCheckMsg}}</view>
+                                <view class="itemAmount">
+                                    <view bindtap="amountChange" class="itemAmountBtn minusIcon" data-action="minus" data-index="{{index}}" data-item="{{cartItem}}" id="minusIcon_{{index}}"></view>
+                                    <view class="itemAmountText">{{cartItem.amount}}</view>
+                                    <view bindtap="amountChange" class="itemAmountBtn addIcon {{cartItem.canCheck?'':'disabled'}}" data-action="add" data-index="{{index}}" data-item="{{cartItem}}" id="addIcon_{{index}}"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="removeItemHandler" class="delete-box" data-index="{{index}}" data-item="{{cartItem}}" id="deleteItemBtn_{{index}}" style="{{cartItem.deleteBoxStyle}}">
+                    <view class="delete-text" style="{{cartItem.deleteTextStyle}}">删除</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cartFooter">
+        <view class="priceContent">
+            <view>
+                <text class="cartTotalLabel">应付合计</text>
+                <text class="cartTotalPriceUnit">￥</text>
+                <text class="cartTotalPrice">{{cart.discountPrice}}</text>
+            </view>
+            <view class="priceDesc" wx:if="{{cart.priceDesc}}">{{cart.priceDesc}}</view>
+        </view>
+        <view bindtap="confirmOrder" class="cartCheckout {{isCanConfirm?'':'disabledBtn'}}" id="checkoutBtn">
+            <text>{{confirmBtnText}}</text>
+        </view>
+    </view>
+</view>
+<view class="emptyCart" wx:if="{{(!cart||cart.productList.length<1)&&clearFlag!=true&&shopInfo!=null}}">
+    <text>您的购物车有点寂寞</text>
+    <navigator openType="switchTab" url="../../pages/index/menu">去喝一杯</navigator>
+</view>
+<view class="emptyShop" wx:elif="{{shopInfo===null&&clearFlag!=true}}">
+    <text class="noShopInfo">获取门店信息失败</text>
+    <text>请前往菜单页确认下单门店</text>
+    <navigator openType="switchTab" url="../../pages/index/menu">立即前往</navigator>
+</view>
+<view class="emptyCart" wx:if="{{clearFlag===true&&(!cart||cart.productList.length<1)}}">
+    <text>您的购物车有点寂寞</text>
+    <navigator openType="switchTab" url="../../pages/index/menu">去喝一杯</navigator>
+</view>

@@ -1,0 +1,38 @@
+<view class="order-info">
+    <view class="order-item {{item.isGift?'gift':''}}" wx:for="{{ticketList}}" wx:key="orderItem_{{index}}">
+        <view class="item-info">
+            <view class="item-name">{{item.isGift?'赠送：':''}}</view>
+            <view class="item-desc item-desc-{{item.type}}" wx:if="{{item.coffeeStockTitle}}">{{item.coffeeStockTitle}}</view>
+        </view>
+        <view class="item-amount-price">
+            <view class="item-amount">x{{item.amount}}</view>
+            <view class="item-price">￥{{item.isGift?0:item.price}}</view>
+        </view>
+    </view>
+</view>
+<view class="order-total-price">
+    <view class="total-amount">共{{totalCount}}张</view>
+    <view class="total-price">
+        <view class="price-desc">小计 </view>
+        <view class="price-num">￥{{totalPrice}}</view>
+    </view>
+</view>
+<view class="agreement-info {{isIpx?'is-ipx':''}}">
+    <view class="pay-agree">
+        <view bindtap="checkPayAgree" class="pay-agree-checkbox {{payAgree?'':'un-agree'}}" id="payAgreeBtn"></view>
+        <view class="pay-agree-msg">我已阅读并同意
+      <navigator url="/pages/agreement/pay">《支付协议》</navigator>
+        </view>
+    </view>
+    <view class="invoice-tip">
+    温馨提示：仅支持开具电子发票，订单完成后可前往luckin coffee APP-发票管理中开具
+  </view>
+</view>
+<view class="confirm-footer {{isIpx?'fix-iphonex-bottom':''}}">
+    <view class="btn-container">
+        <view class="total">
+            <text class="emph">￥{{totalPrice}}</text>
+        </view>
+        <view bindtap="checkout" class="btn {{payAgree?'':'disabled'}}">去结算</view>
+    </view>
+</view>

@@ -1,0 +1,166 @@
+.address-edit {
+    height: 100vh;
+    font-size: 28rpx;
+}
+
+.address-edit .form {
+    background: #fff;
+    padding-left: 30rpx;
+}
+
+.address-edit .form .item {
+    position: relative;
+    height: 110rpx;
+    line-height: 110rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.address-edit .form .item .clear {
+    position: absolute;
+    z-index: 99;
+    top: 25rpx;
+    right: 10rpx;
+    width: 30rpx;
+    height: 30rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/clear.png) center no-repeat;
+    background-size: 50%;
+    padding: 20rpx;
+}
+
+.address-edit .form .item .right-arrow {
+    display: inline-block;
+    position: absolute;
+    top: 41rpx;
+    right: 30rpx;
+    width: 28rpx;
+    height: 28rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png) center no-repeat;
+    background-size: cover;
+}
+
+.address-edit .form .item label.note {
+    display: block;
+    width: 120rpx;
+    float: left;
+    color: #666;
+}
+
+.address-edit .form .item .input {
+    height: 110rpx;
+    line-height: 110rpx;
+    margin-right: 90rpx;
+}
+
+.address-edit .form .item .inputPlaceholder {
+    color: #cdcdcd;
+}
+
+.address-edit .form .item .address-detail {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 60rpx;
+    width: 500rpx;
+}
+
+.address-edit .form .item .tag {
+    display: inline-block;
+    width: 120rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    border-radius: 60rpx;
+    background: #f8f8f8;
+    color: #333;
+    margin-right: 30rpx;
+    text-align: center;
+}
+
+.address-edit .form .item .tag.selected {
+    background: #fff;
+    border: 1rpx solid #7CA7D2;
+    color: #7CA7D2;
+}
+
+.address-edit .default {
+    padding: 34rpx 30rpx;
+    color: #666;
+}
+
+.address-edit .group {
+    display: inline-block;
+}
+
+.address-edit .group.second {
+    margin-left: 88rpx;
+}
+
+.address-edit .group text {
+    margin-left: 28rpx;
+    color: #333;
+}
+
+.address-edit .checkbox {
+    display: inline-block;
+    width: 36rpx;
+    height: 36rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/unselected.png) center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.address-edit .checkbox.checked {
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/selected.png) center no-repeat;
+    background-size: cover;
+}
+
+.address-edit .btns {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 120rpx;
+    border-top: 1px solid #f1f1f1;
+    background: #fff;
+    text-align: center;
+}
+
+.address-edit .btns .save-btn {
+    margin: 30rpx;
+    color: #fff;
+    background: #7CA7D2;
+    text-align: center;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 6rpx;
+    font-size: 30rpx;
+}
+
+.address-edit .btns .save-btn.disabled {
+    opacity: 0.5;
+}
+
+.address-edit .btns .del-btn {
+    display: inline-block;
+    color: #666;
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    text-align: center;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 6rpx;
+    font-size: 30rpx;
+}
+
+.address-edit .btns.single .del-btn {
+    display: none;
+}
+
+.address-edit .btns.dulplication .btn {
+    width: 330rpx;
+    margin: 25rpx 15rpx;
+    display: inline-block;
+}
+
+.address-edit .isIphonex {
+    height: 135rpx;
+}

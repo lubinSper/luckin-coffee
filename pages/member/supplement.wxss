@@ -1,0 +1,58 @@
+.supplement {
+    font-size: 28rpx;
+}
+
+.supplement .item {
+    background: #fff;
+    clear: both;
+    overflow: hidden;
+    height: 120rpx;
+    line-height: 120rpx;
+    margin-left: 40rpx;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.supplement .item input {
+    height: 118rpx;
+}
+
+.supplement .item radio {
+    display: none;
+}
+
+.supplement .radio .text {
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 50rpx;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/common/unselected.png');
+}
+
+.supplement .radio.active .text {
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 50rpx;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/common/selected.png');
+}
+
+.supplement .item .note {
+    float: left;
+}
+
+.supplement .item .area {
+    float: right;
+    width: 580rpx;
+}
+
+.supplement .item .area label {
+    margin-right: 40rpx;
+}
+
+.supplement button {
+    margin: 60rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 5rpx;
+    font-size: 30rpx;
+    border: none;
+    background: #7CA7D2;
+}

@@ -1,0 +1,30 @@
+<template name="orderItem">
+    <view bindtap="selectProduct" class="item-wrap" data-index="{{index}}" data-item="{{item}}">
+        <view class="item-title">{{item.productName}}</view>
+        <view class="item-amount">￥{{item.productPrice}}</view>
+        <view class="item-desc">{{item.additionListDesc}}</view>
+        <view class="item-text" data-index="{{index}}">
+            <view class="use-wallet-item" wx:if="{{item.cafeKuId!=0}}">
+                <view>已使用【{{item.coffeeStockTitle}}】</view>
+                <view class="discount">-￥{{item.cafeKuDiscountMoney}}</view>
+            </view>
+            <view class="use-wallet-item nope" wx:if="{{item.cafeKuId==0}}">未使用咖啡钱包</view>
+        </view>
+    </view>
+</template>
+<view class="order-items {{isIpx?'is-ipx':''}}">
+    <view class="order-desc" wx:if="{{walletParam.useDefaultCafeKu==1&&walletParam.totalDiscountMoney!=0}}">已自动选择最优方案，共节省<text class="emph">￥{{utils.fixCount(walletParam.totalDiscountMoney)}}</text>。点击可修改方案</view>
+    <view class="order-desc" wx:if="{{walletParam.useDefaultCafeKu==0&&walletParam.totalDiscountMoney!=0}}">您已成功修改方案，共节省<text class="emph">￥{{utils.fixCount(walletParam.totalDiscountMoney)}}</text>。</view>
+    <scroll-view class="list-wrap">
+        <template is="orderItem" data="{{item:item,index:index}}" wx:for="{{walletParam.productList}}" wx:key="index"></template>
+        <template is="emptyList" data="{{emptyData:emptyData}}" wx:if="{{emptyData}}"></template>
+    </scroll-view>
+</view>
+<view class="usewallet-footer {{isIpx?'fix-iphonex-bottom':''}}">
+    <view class="btn-container">
+        <view bindtap="clickNotUseHandler" class="normal btn">不使用</view>
+        <view bindtap="clickRetDefaultHandler" class="normal btn" wx:if="{{walletParam.useDefaultCafeKu==0}}">恢复默认</view>
+        <view bindtap="clickConfirmHandler" class="use btn">确定</view>
+    </view>
+</view>
+<wxs module="utils" src="detailUtils.wxs" />

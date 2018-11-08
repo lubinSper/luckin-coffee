@@ -1,0 +1,128 @@
+.banner-box {
+    width: 100%;
+    height: 604rpx;
+    overflow: hidden;
+}
+
+.banner-box swiper {
+    height: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    display: inline-block;
+    height: 604rpx;
+}
+
+.list-box {
+    margin-top: 12rpx;
+}
+
+.list-box .list {
+    min-height: 160rpx;
+    width: 666rpx;
+    box-sizing: border-box;
+    margin: 0rpx auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list>image {
+    width: 88rpx;
+    height: 88rpx;
+    margin: auto 0rpx;
+}
+
+.list-buttomBorder {
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.list-text {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0rpx;
+}
+
+.list-text>label:first-child {
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    line-height: 48rpx;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 0;
+}
+
+.list-text>label:last-child {
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    color: #666;
+    letter-spacing: 0;
+}
+
+.lsit-sendTip {
+    font-family: PingFangSC-Medium;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    color: #fff;
+    vertical-align: middle;
+    letter-spacing: 1rpx;
+    background: #e06e11;
+    display: inline-block;
+    padding: 6rpx 10rpx;
+    border-radius: 4rpx;
+    font-weight: 0;
+    margin-bottom: 6rpx;
+}
+
+.coupon {
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+
+.envelopeBox {
+    position: absolute;
+    top: 0;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.envelopeBox .envelope {
+    position: relative;
+    width: 522rpx;
+    height: 680rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/index/activeImg.jpg) center no-repeat;
+    background-size: contain;
+    border-radius: 8rpx;
+}
+
+.envelopeBox .received {
+    background: url(https://static.luckincoffeecdn.com/mini/images/index/coupon_use.png) center no-repeat;
+    background-size: contain;
+}
+
+.envelopeBox .envelope .submitBtn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.envelopeBox .envelope .closeBtn {
+    width: 32rpx;
+    height: 32rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/close.png) center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: -52rpx;
+    right: -52rpx;
+}

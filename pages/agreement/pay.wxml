@@ -1,0 +1,40 @@
+<view class="pay-agreement">
+    <view class="hide" title="支付协议"></view>
+    <view class="paymentProtocol">
+        <view class="paymentProtocolContent">
+            <view class="paymentProtocolTip">
+                <text style="color: #FE6057">特别提示：</text>
+                <text>您在同意授权书前应完整、仔细地阅读本授权书，您勾选同意将被视为完全理解并接受以下全部授权书条款。您在luckin coffee上勾选同意本支付授权书后，即成为本支付授权书之授权人，该授权即刻发生效力。您如果不同意以下授权书条款，请勿勾选同意，且不要进行后续操作。</text>
+            </view>
+            <view class="paymentProtocolBook">
+                <view class="paymentProtocolBookTitle">
+                    支付授权书
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    一、授权人兹授权北京瑞吉咖啡有限公司（以下简称“乙方”）通过第三方支付平台划扣服务费。
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    二、服务费是指授权人通过luckin coffee提交的订单上记载的总费用。
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    三、在授权人成功提交订单后，乙方依照luckin coffee上公布的收费规则计算服务费用。授权人应在5分钟内根据页面指示完成支付。
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    四、如因授权人在第三方支付平台中的支付账户被锁定、无效、盗用、被往来银行拒绝等，以致支付账户请款失败时，
+                    乙方有权依据与授权人之消费账单要求授权人支付服务费。
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    五、授权人如有冒用他人支付账户之行为，须自负法律责任。
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    六、在使用luckin coffee服务的过程中，如授权人未遵从相关规则，则乙方有权拒绝为授权人提供相关服务，且无需承担任何责任。
+                    因授权人的过错导致的任何损失由授权人承担，该等过错包括但不限于：不按照交易提示操作，未及时进行交易操作等。
+                </view>
+                <view class="paymentProtocolBookClause mb40">
+                    七、授权人同意其消费产生的服务费用以乙方记录的数据为准，并通过luckin coffee告知授权人。
+                    授权人对服务费用有异议或扣款金额与应缴费用金额不符时，可及时与客服4000100100联系。
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,987 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    touch-action: none;
+}
+
+.address-box {
+    display: none;
+    background: #fff;
+}
+
+.address-box .address {
+    display: inline-block;
+    padding-top: 15rpx;
+}
+
+.address-box .icon {
+    vertical-align: top;
+    display: inline-block;
+    width: 26rpx;
+    height: 40rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/index/location.png) center no-repeat;
+    background-size: 100%;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.address-box .address .detail {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+    max-width: 400rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.address-box .address .info {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.address-box .address .info .mobile {
+    margin-right: 15rpx;
+}
+
+.address-box .address .note {
+    margin-top: 10rpx;
+    font-size: 22rpx;
+}
+
+.address-box .address .note .fee {
+    color: #e06e11;
+    padding-right: 15rpx;
+    border-right: 1px solid #ccc;
+    margin-right: 15rpx;
+}
+
+.address-box .address .note .slow {
+    color: #999;
+}
+
+.address-box .address .note .slow-icon {
+    vertical-align: top;
+    display: inline-block;
+    width: 26rpx;
+    height: 26rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/slow.png) center no-repeat;
+    background-size: 98%;
+    margin-top: 5rpx;
+    margin-left: 5rpx;
+}
+
+.address-box .switch {
+    float: right;
+    margin-right: 30rpx;
+    font-size: 28rpx;
+    color: #7ca7d2;
+    border: 2rpx solid #7ca7d2;
+    border-radius: 55rpx;
+    overflow: hidden;
+    padding: 2rpx;
+}
+
+.address-box .switch label {
+    display: inline-block;
+    width: 80rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.address-box .switch label.selected {
+    background: #7ca7d2;
+    color: #fff;
+    border-radius: 55rpx;
+}
+
+.address-box.send {
+    height: 166rpx;
+    display: block;
+}
+
+.address-box.send .icon {
+    margin-top: 55rpx;
+}
+
+.address-box.send .switch {
+    margin-top: 40rpx;
+}
+
+.address-box.pick {
+    height: 128rpx;
+    display: block;
+}
+
+.address-box.pick .icon {
+    margin-top: 35rpx;
+}
+
+.address-box.pick .switch {
+    margin-top: 20rpx;
+}
+
+.banner-box {
+    width: 100%;
+    height: 240rpx;
+    overflow: hidden;
+}
+
+.banner-box swiper {
+    height: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    height: 240rpx;
+}
+
+.location-faild {
+    margin-top: 200rpx;
+    text-align: center;
+}
+
+.location-faild .text {
+    text-align: center;
+    color: #999;
+    font-size: 28rpx;
+    margin-bottom: 30rpx;
+}
+
+.location-faild .btn {
+    width: 200rpx;
+    margin: 0 auto;
+    color: #fff;
+    background: #7ca7d2;
+    border: 0;
+    font-size: 28rpx;
+}
+
+.location-faild .nearby-btn {
+    margin: 0 auto;
+    width: 320rpx;
+    height: 66rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #7ca7d2;
+    font-size: 28rpx;
+    color: #7ca7d2;
+    background: #fff;
+}
+
+.location-faild .nearby-or {
+    margin-top: 40rpx;
+    display: inline-block;
+    height: 35rpx;
+    width: 35rpx;
+    line-height: 35rpx;
+    border: 1rpx solid #7ca7d2;
+    border-radius: 50%;
+    font-size: 20rpx;
+}
+
+.location-faild .nearyby-text {
+    color: #7ca7d2;
+    font-size: 24rpx;
+    margin-top: 40rpx;
+}
+
+.location-faild .nearyby-text .right-arrow {
+    display: inline-block;
+    width: 28rpx;
+    height: 28rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png) center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    margin-bottom: 5rpx;
+    margin-left: -5rpx;
+}
+
+.content-box {
+    display: flex;
+    overflow: hidden;
+    flex: 1;
+}
+
+.menu-box {
+    flex: 0 0 180rpx;
+    background: #f6f6f6;
+    display: flex;
+    overflow-x: hidden;
+}
+
+.menu-view {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 0 0 194rpx;
+}
+
+.menu-box .menu-item {
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #999;
+    font-size: 26rpx;
+    display: block;
+    padding-right: 14rpx;
+    position: relative;
+}
+
+.menu-box .menu-item:first-child {
+    border-top: 0;
+}
+
+.menu-box .menu-item:last-child {
+}
+
+.menu-box .active {
+    background: #fff;
+    color: #333;
+}
+
+.menu-box .label {
+    display: block;
+    height: 24rpx;
+    line-height: 24rpx;
+    padding: 0 6rpx 0 8rpx;
+    position: absolute;
+    top: 0;
+    right: 14rpx;
+    font-size: 20rpx;
+    overflow: hidden;
+}
+
+.product-box {
+    background: #fff;
+    overflow: hidden;
+    flex: auto;
+}
+
+.product-view {
+    padding-top: 20rpx;
+}
+
+.product-category {
+    padding: 0 24rpx;
+    display: flex;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+}
+
+.product-category .title-hr {
+    flex: 1;
+    border-bottom: 1rpx solid #f1f1f1;
+    margin-bottom: 15rpx;
+}
+
+.product-category .sub-hr {
+    flex: 1;
+    border-bottom: 1rpx solid #f1f1f1;
+    margin-bottom: 10rpx;
+}
+
+.product-category-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-category .title-box {
+    display: flex;
+    align-items: center;
+    margin-right: 16rpx;
+}
+
+.product-category .title {
+    font-size: 26rpx;
+    color: #333;
+    background: #fff;
+    margin-right: 8rpx;
+    line-height: 100%;
+}
+
+.product-category .title-icon {
+    max-width: 60rpx;
+    max-height: 26rpx;
+}
+
+.product-category .sub-box {
+    display: flex;
+    align-content: center;
+}
+
+.product-category .subtitle {
+    font-size: 20rpx;
+    padding-right: 20rpx;
+    color: #999;
+    background: #fff;
+    z-index: 1;
+    line-height: 100%;
+}
+
+.product-category .subtitle .colored {
+    color: #E16E0F;
+}
+
+.product-item-box {
+    position: relative;
+    height: 140rpx;
+    padding: 24rpx 0;
+    margin: 0 24rpx;
+    display: flex;
+}
+
+.product-item-box:last-child {
+    border-bottom: 0;
+}
+
+.product-item-box .product-mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -24rpx;
+    right: -24rpx;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    z-index: 3;
+}
+
+.product-item-box.saleout .product-mask {
+    display: block;
+}
+
+.product-pic-box {
+    flex: 0 0 150rpx;
+    position: relative;
+}
+
+.product-pic {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 4rpx;
+}
+
+.product-disc {
+    display: inline;
+    position: absolute;
+    right: 5rpx;
+    bottom: 4rpx;
+    height: 30rpx;
+    font-size: 18rpx;
+    line-height: 30rpx;
+    color: #fff;
+    background: #e06e11;
+    border-radius: 6rpx;
+    text-align: center;
+    padding: 0 8rpx;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.product-info {
+    margin-left: 6rpx;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-name {
+    color: #333;
+    font-size: 30rpx;
+    line-height: 35rpx;
+    font-weight: bold;
+    overflow: hidden;
+    margin-top: -2rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-tag {
+    display: flex;
+    color: #fff;
+    font-size: 20rpx;
+    flex: 1;
+    height: 100%;
+}
+
+.product-tag .product-tag-item {
+    background: #7ca7d2;
+    margin-left: 10rpx;
+    box-sizing: border-box;
+    padding: 0 10rpx;
+    border-radius: 4rpx;
+    text-align: center;
+    overflow: hidden;
+    line-height: 28rpx;
+    white-space: nowrap;
+}
+
+.product-ename {
+    color: #999;
+    font-size: 20rpx;
+    line-height: 24rpx;
+    margin-top: 2rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12rpx;
+    height: 44rpx;
+    width: 100%;
+}
+
+.product-select {
+    font-size: 24rpx;
+    border: 1rpx #96b9db solid;
+    background: #fff;
+    color: #7ca7da;
+    border-radius: 100rpx;
+    line-height: 44rpx;
+    height: 44rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    display: block;
+}
+
+.product-price {
+    flex: 1;
+    text-align: left;
+    font-size: 24rpx;
+    color: #404040;
+}
+
+.product-price .bold {
+    font-weight: bold;
+    font-size: 32rpx;
+}
+
+.product-price .bold .unit {
+    font-size: 24rpx;
+}
+
+.product-price .before {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.product-price .after {
+    font-size: 32rpx;
+    color: #E16E0F;
+    margin-right: 10rpx;
+}
+
+.product-price .after .unit {
+    font-size: 24rpx;
+}
+
+.product-limit {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #333;
+    vertical-align: top;
+    line-height: 44rpx;
+    margin-right: 10rpx;
+}
+
+.product-limit .num-red {
+    color: #e40;
+}
+
+.product-add {
+    display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/add_icon.png) center no-repeat;
+    background-size: 40rpx;
+    background-position: 0 0;
+}
+
+.sell-out-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell-out-msg {
+    opacity: 1;
+    display: block;
+    width: 92rpx;
+    height: 92rpx;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 100%;
+    color: #fff;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 92rpx;
+}
+
+.sell-out-flag:not(.sell-out-box) {
+    opacity: 0.5;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#wrapper[id] {
+    display: table;
+}
+
+#mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#mid[id] {
+    display: table-cell;
+    left: 0;
+    vertical-align: middle;
+    position: static;
+}
+
+#box {
+    position: relative;
+    top: -50%;
+    left: -50%;
+    z-index: 9999;
+    width: 300px;
+}
+
+#box[id] {
+    left: 0;
+    margin: 0 auto;
+}
+
+div.boxstyle {
+    border: 2px solid #000;
+    text-align: center;
+    padding: 5px;
+}
+
+.product-detail-mask {
+    z-index: 8888;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+
+.product-detail {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.product-detail .layer-content {
+    position: relative;
+    display: inline-block!important;
+    vertical-align: middle;
+    width: 670rpx;
+    height: auto;
+    background: #fff;
+    border-radius: 20rpx;
+    overflow: hidden;
+    text-align: left;
+}
+
+.product-detail .layer-content-flag {
+    display: inline-block;
+    width: 0rpx;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.product-detail .close {
+    position: absolute;
+    z-index: 10000;
+    top: 15rpx;
+    right: 15rpx;
+    width: 44rpx;
+    height: 44rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/close.png) center no-repeat;
+    background-size: cover;
+}
+
+.product-detail .top {
+    height: 314rpx;
+    background: #333;
+    position: relative;
+}
+
+.product-detail .top .content {
+    position: absolute;
+    bottom: 30rpx;
+    width: 100%;
+}
+
+.product-detail .top .name {
+    padding: 0 30rpx;
+    color: #fff;
+    font-size: 42rpx;
+    max-width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-detail .top .enname {
+    color: #fff;
+    font-weight: normal;
+    font-size: 24rpx;
+    padding-left: 30rpx;
+    max-width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-detail .top .desc {
+    padding: 0 30rpx;
+    color: #fff;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+}
+
+.product-detail .middle {
+    max-height: 400rpx;
+}
+
+.product-detail .middle .item {
+    padding-bottom: 30rpx 30rpx 0 30rpx;
+    clear: both;
+    overflow: hidden;
+}
+
+.product-detail .middle .item:first-child {
+    margin-top: 30rpx;
+}
+
+.product-detail .middle .item .label {
+    display: inline-block;
+    font-size: 28rpx;
+    color: #333;
+    padding-left: 30rpx;
+}
+
+.product-detail .middle .item .tags {
+    float: right;
+    width: 550rpx;
+}
+
+.product-detail .middle .item .tags text {
+    display: inline-block;
+    width: 152rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 30rpx;
+    text-align: center;
+    background: #f8f8f8;
+    color: #666;
+    border: 2rpx solid #f8f8f8;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    font-size: 26rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-detail .middle .item .tags text.selected {
+    border: 1px solid #d7c8bc;
+    background: #fff;
+    color: #754b26;
+}
+
+.product-detail .middle .item .tags text.disabled {
+    color: #ccc;
+}
+
+.product-detail .middle .note {
+    border-top: 1rpx solid #e2e2e2;
+    margin-left: 30rpx;
+    padding: 30rpx 30rpx 30rpx 0;
+}
+
+.product-detail .middle .desc {
+    border-top: 1rpx solid #e2e2e2;
+    padding: 30rpx 30rpx 30rpx 0;
+    margin-left: 30rpx;
+}
+
+.product-detail .middle .title {
+    color: #333;
+    font-size: 26rpx;
+    margin-bottom: 12rpx;
+}
+
+.product-detail .middle .desc .content {
+    color: #333;
+    font-size: 24rpx;
+    margin-bottom: 12rpx;
+}
+
+.product-detail .middle .note .say {
+    font-size: 22rpx;
+    overflow: hidden;
+    clear: both;
+}
+
+.product-detail .middle .note .say .head {
+    border-radius: 50%;
+    background: #333;
+    height: 60rpx;
+    width: 60rpx;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.product-detail .middle .note .say .content {
+    float: right;
+    width: 530rpx;
+}
+
+.product-detail .middle .note .say .content .name {
+    font-size: 22rpx;
+    color: #333;
+}
+
+.product-detail .middle .note .say .content .owner {
+    margin-top: 10rpx;
+    font-size: 18rpx;
+    color: #172991;
+    background: #f1f1f1;
+    border-radius: 6rpx;
+    padding: 0 6rpx;
+    line-height: 30rpx;
+    margin-left: 10rpx;
+}
+
+.product-detail .middle .note .say .content .words {
+    font-size: 22rpx;
+    color: #333;
+    margin-top: 10rpx;
+}
+
+.product-detail .middle .note .say .content .time {
+    font-size: 18rpx;
+    color: #7ca7d2;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.product-detail .bottom {
+    border-top: 1px solid #e2e2e2;
+    padding: 0 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.product-detail .bottom .opera {
+    padding-top: 16rpx;
+    clear: both;
+    overflow: hidden;
+}
+
+.product-detail .bottom .opera .left {
+    float: left;
+}
+
+.product-detail .bottom .opera .left .price {
+    color: #333;
+    font-size: 24rpx;
+}
+
+.product-detail .bottom .opera .left .price .bold {
+    font-weight: bold;
+    font-size: 34rpx;
+}
+
+.product-detail .bottom .opera .left .desc {
+    margin-top: 12rpx;
+    color: #666;
+    font-size: 20rpx;
+    max-width: 370rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-detail .bottom .opera .right {
+    float: right;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+
+.product-detail .bottom .opera .right .increment {
+    display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/add_icon.png) center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.product-detail .bottom .opera .right .decrement {
+    display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/minus_icon.png) center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.product-detail .bottom .opera .right .num {
+    margin: 0 20rpx;
+    line-height: 44rpx;
+}
+
+.product-detail .bottom .buttons {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-top: 30rpx;
+}
+
+.product-detail .bottom .btn {
+    flex: 1;
+    margin-right: 30rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    color: #fff;
+    text-align: center;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    background: #f8f8f8;
+}
+
+.product-detail .bottom .btn:last-child {
+    margin-right: 0;
+}
+
+.product-detail .bottom .btn .icon {
+    display: inline-block;
+    width: 34rpx;
+    height: 34rpx;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20rpx;
+    vertical-align: top;
+    margin-top: 16rpx;
+}
+
+.product-detail .bottom .tip-btn {
+    background: #df6400;
+}
+
+.product-detail .bottom .tip-btn .icon {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/common/coupon_white.png);
+}
+
+.product-detail .bottom .add-btn {
+    background: #7ca7d2;
+}
+
+.product-detail .bottom .add-btn .icon {
+    background-image: url(https://static.luckincoffeecdn.com/mini/images/common/cart_white.png);
+}
+
+.coupon {
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+
+.envelopeBox {
+    position: absolute;
+    top: 0;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.envelopeBox .envelope {
+    position: relative;
+    width: 522rpx;
+    height: 680rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/index/coupon_receive.png) center no-repeat;
+    background-size: contain;
+    border-radius: 8rpx;
+}
+
+.envelopeBox .received {
+    background: url(https://static.luckincoffeecdn.com/mini/images/index/coupon_use.png) center no-repeat;
+    background-size: contain;
+}
+
+.envelopeBox .envelope .submitBtn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.envelopeBox .envelope .closeBtn {
+    width: 32rpx;
+    height: 32rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/close.png) center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: -52rpx;
+    right: -52rpx;
+}
+
+#fixed-helper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}

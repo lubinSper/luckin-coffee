@@ -1,0 +1,18 @@
+<view class="commentContent">
+    <view class="txtBox ">
+        <textarea bindinput="inputCommentMsg" maxlength="200 " placeholder="请添加问题描述" placeholderStyle="color:#cdcdcd; font-size:26rpx;" value="{{commentMsg}}"></textarea>
+        <view class="txtCount ">{{commentMsgCount}}/200</view>
+    </view>
+</view>
+<view class="commentImgs">
+    <view class="uploadTitle">上传截图凭证（选填）</view>
+    <view class="uploadContent">
+        <view bindtap="uploadImg" class="uploadImage {{!uploadBtn.imgSrc?'active':''}}" id="uploadImageBtn">
+            <image mode="aspectFill" src="{{uploadBtn.imgSrc}}" wx:if="{{uploadBtn.imgSrc}}"></image>
+        </view>
+        <view class="uploadCount">{{uploadImgsCount}}/1</view>
+    </view>
+</view>
+<view class="commentFooter">
+    <view bindtap="saveComment" class="saveBtn {{disabledSaveBtn?'disabled':''}}" id="saveCommentBtn">保存</view>
+</view>

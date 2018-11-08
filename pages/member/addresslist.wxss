@@ -1,0 +1,126 @@
+.address-list {
+    background: #fff;
+    height: 100vh;
+}
+
+.address-list .nothing {
+    margin-top: 200rpx;
+    text-align: center;
+}
+
+.address-list .nothing .icon {
+    margin: 0 auto;
+    width: 250rpx;
+    height: 172rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/common/nothing.png) center no-repeat;
+    background-size: cover;
+}
+
+.address-list .nothing .text {
+    color: #999;
+    font-size: 26rpx;
+    text-align: center;
+    margin-top: 60rpx;
+}
+
+.address-list .note {
+    line-height: 80rpx;
+    font-size: 24rpx;
+    color: #666;
+    padding-left: 30rpx;
+    background: #fff;
+}
+
+.address-list .list {
+    padding-left: 30rpx;
+    background: #fff;
+    padding-bottom: 130rpx;
+}
+
+.address-list .list .item {
+    position: relative;
+    height: 130rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.address-list .list .item .address {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    padding-top: 30rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+}
+
+.address-list .list .item .detail {
+    font-size: 24rpx;
+    color: #999;
+    padding-top: 10rpx;
+}
+
+.address-list .list .item .detail .tag {
+    background: #7ca7d2;
+    color: #fff;
+    border-radius: 4rpx;
+    padding: 0 16rpx;
+    margin-right: 15rpx;
+    font-size: 20rpx;
+}
+
+.address-list .list .item .detail .defaultTag {
+    background: #999;
+    color: #fff;
+    border-radius: 4rpx;
+    padding: 0 16rpx;
+    margin-right: 14rpx;
+    font-size: 20rpx;
+}
+
+.address-list .list .item .info {
+    font-size: 24rpx;
+    color: #999;
+    padding-top: 10rpx;
+}
+
+.address-list .list .item .info .name {
+    margin-left: 15rpx;
+}
+
+.address-list .list .item .edit {
+    position: absolute;
+    top: 60rpx;
+    right: 30rpx;
+    width: 32rpx;
+    height: 32rpx;
+    background: url(https://static.luckincoffeecdn.com/mini/images/address/address-edit.png) center no-repeat;
+    background-size: cover;
+}
+
+.address-list .btns {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #f1f1f1;
+    background: #fff;
+    text-align: center;
+}
+
+.address-list .btns .add-btn {
+    color: #7ca7d2;
+    background: #fff;
+    text-align: center;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 38rpx;
+}
+
+.address-list .btns .add-btn text {
+    font-size: 30rpx;
+    font-weight: 700;
+}
+
+.address-list .btns .isIphonex {
+    height: 105rpx;
+}

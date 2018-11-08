@@ -1,0 +1,41 @@
+<view class="home">
+    <view class="banner-box" wx:if="{{null!==adPics&&adPics.length>0}}">
+        <swiper autoplay="{{autoplay}}" circular="true" class="banner-swiper-box" duration="{{duration}}" indicatorActiveColor="#fff" indicatorColor="rgba(255, 255, 255, 0.5)" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item wx:for="{{adPics}}" wx:key="{{ item.index }}">
+                <image bindtap="goImgLink" class="banner-image" data-clickurl="{{item.clickUrl}}" src="{{item.sourceUrl}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="list-box">
+        <view bindtap="toMenu" class="list list-buttomBorder">
+            <view class="list-text">
+                <label>现在下单</label>
+                <label>ORDER NOW</label>
+            </view>
+            <image src="https://static.luckincoffeecdn.com/mini/images/index/order.png"></image>
+        </view>
+        <view bindtap="toWallet" class="list list-buttomBorder">
+            <view class="list-text">
+                <label>咖啡钱包
+          <label class="lsit-sendTip" wx:if="{{sendTip!=''}}">{{sendTip}}</label>
+                </label>
+                <label>COFFEE WALLET</label>
+            </view>
+            <image src="https://static.luckincoffee.com/mini/images/index/wallet.png"></image>
+        </view>
+        <view bindtap="toACup" class="list">
+            <view class="list-text">
+                <label>邀请得杯</label>
+                <label>LNVITING A CUP</label>
+            </view>
+            <image src="https://static.luckincoffee.com/mini/images/index/cup.png"></image>
+        </view>
+    </view>
+    <view class="coupon" wx:if="{{isShowEnvelope}}"></view>
+    <form bindsubmit="coupon" class="envelopeBox" id="{{isReceived?'useCoupon':'receiveCoupon'}}" reportSubmit="true" wx:if="{{isShowEnvelope}}">
+        <view class="envelope {{isReceived?'':''}}">
+            <button class="submitBtn" formType="submit"></button>
+            <view bindtap="closeEnvelope" class="closeBtn" id="closeEnvelopeBtn"></view>
+        </view>
+    </form>
+</view>

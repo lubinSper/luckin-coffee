@@ -1,0 +1,29 @@
+<template name="emptyList">
+    <view class="empty-list">您的咖啡钱包有点寂寞</view>
+</template>
+<template name="cardItem">
+    <view bindtap="selectItem" class="card-item" data-item="{{item}}">
+        <view class="card-content">
+            <view class="card-type">{{item.type}} {{item.typeDesc}}</view>
+            <view class="card-price">￥{{item.price}}</view>
+            <view class="card-num">{{item.stockDesc}}</view>
+            <view class="card-image">
+                <image src="{{item.imgUrl}}"></image>
+            </view>
+        </view>
+        <view class="notch left-notch"></view>
+        <view class="notch right-notch"></view>
+    </view>
+</template>
+<view bindtap="openDesc" class="wallet-desc">咖啡钱包说明</view>
+<view class="wallet-list {{isIpx?'is-ipx':''}}">
+    <template is="cardItem" data="{{item:item,index:index}}" wx:if="{{ticketList.length>0}}" wx:for="{{ticketList}}" wx:key="index"></template>
+    <template is="emptyList" data wx:if="{{ticketList.length<=0}}"></template>
+</view>
+<view class="usewallet-footer {{isIpx?'fix-iphonex-bottom':''}}">
+    <view class="btn-container">
+        <view bindtap="goBuyTicket" class="discount btn">充赠优惠</view>
+        <view bindtap="openModal" class="offer btn">我要请客</view>
+        <view bindtap="openModal" class="redpacket btn">发送红包</view>
+    </view>
+</view>

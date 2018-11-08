@@ -1,0 +1,453 @@
+page {
+    background: #fbfbfb;
+    color: #333;
+    font-size: 26rpx;
+}
+
+.pageErr {
+    height: 100vh;
+    width: 100%;
+    background: url('https://static.luckincoffeecdn.com/mini/images/common/nothing.png') no-repeat center 232rpx;
+    background-size: 172rpx 104rpx;
+}
+
+.pageErr .errTip {
+    font-size: 26rpx;
+    color: #666;
+    text-align: center;
+    padding-top: 360rpx;
+    margin-bottom: 60rpx;
+}
+
+.pageErr .reloadBtn {
+    margin: auto;
+    width: 200rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 26rpx;
+    color: #7ca7d2;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #7ca7d2;
+    border-radius: 3px;
+}
+
+.block {
+    display: block;
+}
+
+.pull-right {
+    float: right;
+    text-align: right;
+}
+
+.status-buttons {
+    margin-top: 28rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    margin: 0 10rpx;
+    width: 210rpx;
+    height: 66rpx;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 66rpx;
+    display: inline-block;
+    border-radius: 6rpx;
+    border: 1px solid #fff;
+}
+
+.btn-default {
+    background: #fff;
+    border-color: #ddd;
+}
+
+.btn-warning {
+    background: #fff;
+    color: #df6400;
+    border-color: #df6400;
+}
+
+.btn-success {
+    background: #fff;
+    color: #7ca7d2;
+    border-color: #7ca7d2;
+}
+
+.order-block {
+    background: #fff;
+    padding: 30rpx 30rpx;
+    margin-bottom: 10rpx;
+    position: relative;
+}
+
+.order-block .sub-title {
+    font-size: 28rpx;
+}
+
+.order-block .date {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.order-status {
+    padding: 44rpx 30rpx;
+    text-align: center;
+}
+
+.order-status .status-maintitle {
+    font-size: 36rpx;
+    font-weight: bold;
+    padding-bottom: 20rpx;
+}
+
+.order-status .status-subtitle {
+    font-size: 24rpx;
+    line-height: 24rpx;
+}
+
+.order-status .status-subtitle .emph {
+    padding: 0;
+    color: #7ca7d2;
+}
+
+.order-status .status-refund {
+    padding-top: 32rpx;
+    margin-top: 32rpx;
+    border-top: 1px solid #f1f1f1;
+    text-align: left;
+}
+
+.order-status .status-refund .refund-title {
+    display: inline-block;
+    margin-top: 10rpx;
+    font-size: 28rpx;
+}
+
+.order-status .status-refund .refund-subtitle {
+    font-size: 26rpx;
+    margin-bottom: 6rpx;
+}
+
+.order-status .status-refund .refund-text {
+    font-size: 22rpx;
+}
+
+.order-status .status-refund .refund-mount {
+    font-size: 24rpx;
+    color: #7ca7d2;
+    padding-left: 10rpx;
+}
+
+.take-meal-code {
+    text-align: center;
+    font-size: 36rpx;
+    padding-top: 40rpx;
+    border-top: 1px solid #f1f1f1;
+}
+
+.take-meal-code .canvas-box {
+    text-align: left;
+    width: 360rpx;
+    height: 360rpx;
+    margin: 48rpx auto 40rpx auto;
+    position: relative;
+}
+
+.take-meal-code .emph {
+    color: #7ca7d2;
+}
+
+.take-meal-code .qrcode {
+    width: 360rpx;
+    height: 360rpx;
+    display: block;
+}
+
+.take-meal-code .desc {
+    font-size: 24rpx;
+}
+
+.shop-address .shop-title {
+    font-size: 28rpx;
+    font-weight: bold;
+    padding-bottom: 6rpx;
+}
+
+.shop-address .address-text {
+    width: 80%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.shop-address .shop-tel {
+    margin-top: -30rpx;
+}
+
+.shop-address .shop-tel image {
+    width: 60rpx;
+    height: 60rpx;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/order/service.png');
+}
+
+.order-contain .order-type {
+    padding-bottom: 24rpx;
+    margin-bottom: 22rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.order-contain .order-date {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.order-contain .order-item {
+    margin-bottom: 20rpx;
+}
+
+.delivery-count {
+    margin-bottom: 20rpx;
+}
+
+.order-item .item-name {
+    font-size: 28rpx;
+    font-weight: bold;
+    padding-bottom: 6rpx;
+}
+
+.order-item .item-amount {
+}
+
+.order-item .item-amount .item-count {
+    right: 150rpx;
+    position: absolute;
+}
+
+.order-item .item-amount .item-value {
+    font-weight: bold;
+}
+
+.order-item .item-addition {
+    font-size: 20rpx;
+}
+
+.promotion-item {
+    color: #7ca7d2;
+    margin-bottom: 20rpx;
+}
+
+.order-total {
+    font-size: 24rpx;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20rpx;
+    padding-bottom: 36rpx;
+}
+
+.order-total .total-count {
+    font-size: 28rpx;
+    margin-left: 30rpx;
+}
+
+.total-count .bold {
+    font-weight: bold;
+    margin-left: 10rpx;
+}
+
+.order-addr {
+    overflow: hidden;
+}
+
+.order-addr .addr {
+    width: 480rpx;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.order-addr .name {
+}
+
+.order-delivery {
+    border-top: 1px solid #f1f1f1;
+    margin-top: 40rpx;
+    padding-top: 30rpx;
+}
+
+.order-delivery .delivery-name {
+    line-height: 24rpx;
+}
+
+.order-delivery .delivery-name .text {
+    margin-top: 10rpx;
+    display: block;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.order-delivery .delivery-name .text:after {
+    content: "|";
+    color: #d8d8d8;
+    margin-left: 20rpx;
+}
+
+.order-delivery .delivery-name image {
+    width: 48rpx;
+    height: 48rpx;
+    display: inline-block;
+    background-size: cover;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/common/icon_phone.png');
+}
+
+.order-arrival-time {
+    border-top: 1px solid #f1f1f1;
+    margin-top: 40rpx;
+    padding-top: 30rpx;
+}
+
+.order-evaluate {
+}
+
+.order-evaluate .evaluate-content {
+    width: 350rpx;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 40rpx;
+    text-overflow: ellipsis;
+}
+
+.order-evaluate image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    position: absolute;
+    right: 30rpx;
+    top: 32rpx;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/common/arrow-right.png');
+}
+
+.show-tips {
+    font-size: 22rpx;
+    color: #999;
+    padding-right: 30rpx;
+    background-size: 22rpx;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/common/slow.png');
+}
+
+.show-tips .seprator {
+    padding: 0 10rpx 0 5rpx;
+}
+
+.goback {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    position: absolute;
+    left: 30rpx;
+    top: 50rpx;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/order/icon_close.png');
+}
+
+.popup {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+.popup-show {
+    display: block;
+}
+
+.popup .sharetip-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.popup .sharetip {
+    position: absolute;
+    right: 200rpx;
+    top: 10rpx;
+    width: 150rpx;
+    height: 260rpx;
+}
+
+.popup .popup-container {
+    width: 412rpx;
+    height: 588rpx;
+    left: 50%;
+    top: 50%;
+    margin-left: -206rpx;
+    margin-top: -294rpx;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 20rpx;
+    position: fixed;
+}
+
+.popup .popup-mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0.5;
+    position: fixed;
+}
+
+.popup .popup-close {
+    position: absolute;
+    right: -40rpx;
+    top: -50rpx;
+    background-image: url('https://static.luckincoffeecdn.com/mini/images/common/close.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45rpx;
+    height: 45rpx;
+}
+
+.popup image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+}
+
+.order-invite {
+    margin-top: 30rpx;
+}
+
+.order-invite image {
+    display: block;
+    width: 100%;
+}
+
+.order-download {
+    position: fixed;
+    bottom: 20rpx;
+    right: 20rpx;
+    width: 160rpx;
+}
+
+.order-download.is-ipx {
+    bottom: 88rpx;
+}
+
+.order-download image {
+    display: block;
+    width: 100%;
+}

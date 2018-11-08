@@ -1,0 +1,8 @@
+<template name="navItem">
+    <view bindtap="handlerNavTap" class="navItem{{item.hideBefore?'':' showBefore'}}{{item.hideAfter?'':' showAfter arrowsLeft'}} {{item.id}}" data-id="{{item.id}}" id="{{item.id}}">
+        <text data-id="{{item.id}}">{{item.label}}</text>
+        <view class="extra" data-id="{{item.id}}" wx:if="{{item.extra!==false&&item.extra!==undefined}}">
+            {{item.extra}}
+        </view>
+    </view>
+</template>

@@ -1,0 +1,38 @@
+<template name="orderItem">
+    <view bindtap="navigateToOrderDetail" class="itemWrap" data-id="{{item.orderId}}" id="order_{{item.orderId}}">
+        <view class="hd">
+            <text class="orderId">{{item.orderTypeName}}：{{item.orderNumber}}</text>
+            <text class="{{item.orderStatusClass}}">{{item.orderStatusName}}</text>
+        </view>
+        <view class="bd">
+            <view class="top">
+                <view class="shopDesc">
+                    <text class="shopName">{{item.orderTypeCode===2?item.shopName:item.takeAddress}}</text>
+                    <text class="shopId" wx:if="{{item.orderTypeCode===2}}">{{item.shopId}}</text>
+                </view>
+                <text class="orderTime">{{item.orderTime}}</text>
+            </view>
+            <view class="goodsDesc">
+                <text class="goodsName">{{item.goodsName}}</text>
+                <text class="goodsCount">共 {{item.goodsCount}} 件商品</text>
+            </view>
+            <view class="btm">
+                <text class="totalAmount">￥{{item.orderAmount}}</text>
+                <view class="btnWrap">
+                    <button catchtap="handlerItemEvent" class="{{item.orderButtonClass}}" data-id="{{index}}" data-type="{{item.orderButtonType}}" id="{{item.orderBtnId}}" wx:if="{{!(item.orderStatusCode>80)&&item.orderStatusCode!==11}}">{{item.orderButtonName}}</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../assets/tpls/emptyList/emptyList.wxml"></import>
+<view class="container list">
+    <view class="top-space"></view>
+    <view class="listWrap">
+        <template is="orderItem" data="{{item:item,index:index}}" wx:for="{{listData}}" wx:key="index"></template>
+        <template is="emptyList" data="{{emptyData:emptyData}}" wx:if="{{emptyData}}"></template>
+    </view>
+    <view>
+        <image animation="{{animation}}" bindtap="navigateToInviter" class="coffeeCart {{fixedHeight?'fixedHeight':''}}" src="{{shareImg}}" wx:if="{{listData.length>0}}"></image>
+    </view>
+</view>

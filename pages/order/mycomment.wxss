@@ -1,0 +1,101 @@
+page {
+    background: #fbfbfb;
+}
+
+.commentType {
+    height: 296rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rpx;
+    background-color: #fff;
+}
+
+.commentType .commentTypeMsg {
+    font-size: 36rpx;
+    color: #333;
+    width: 152rpx;
+    height: 168rpx;
+    text-align: center;
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/satisfied_active.png') no-repeat center bottom;
+    background-size: 76rpx 76rpx;
+}
+
+.commentType .dissatisfied {
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/dissatisfied_active.png') no-repeat center bottom;
+    background-size: 76rpx 76rpx;
+}
+
+.commentContent {
+    background: #fff;
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-bottom: 160rpx;
+}
+
+.commentContent .commentLabel {
+    width: 100%;
+    padding-bottom: 30rpx;
+    line-height: 30rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.commentContent .commentDesc {
+    padding: 30rpx 0 36rpx 0;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.commentContent .commentDesc .commentMsg {
+    margin-bottom: 18rpx;
+}
+
+.commentContent .commentDesc .commentImg {
+    margin-bottom: 18rpx;
+}
+
+.commentContent .commentDesc .commentImg image {
+    height: 140rpx;
+    width: 140rpx;
+    border-radius: 6rpx;
+    margin-right: 30rpx;
+}
+
+.commentContent .commentDesc .commentTime {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.commentContent .commentReply {
+    width: 670rpx;
+    padding: 20rpx 0 16rpx 0;
+    background: #f7f7f7;
+    border-radius: 6rpx 6rpx 6rpx 0;
+    position: relative;
+}
+
+.commentContent .commentReply .icon {
+    width: 42rpx;
+    height: 14rpx;
+    background: url('https://static.luckincoffeecdn.com/mini/images/order/icon_triangle.png') no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 64rpx;
+    top: -10rpx;
+}
+
+.commentContent .commentReply .replyContent {
+    padding: 0 10rpx 0 24rpx;
+    font-size: 26rpx;
+    color: #333;
+    line-height: 36rpx;
+    margin-bottom: 9rpx;
+}
+
+.commentContent .commentReply .replyTime {
+    padding: 0 10rpx 0 24rpx;
+    font-size: 24rpx;
+    color: #999;
+}

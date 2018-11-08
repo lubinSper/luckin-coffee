@@ -1,0 +1,81 @@
+<view class="top-bar">
+    <view bindtap="citySelectClickHandler" class="city-select" id="citySelect">
+        <label class="note">所选城市：</label>
+        <label class="name">
+            <text>{{cityInfo.cityName}}</text>
+            <label class="arrow-down"></label>
+        </label>
+    </view>
+    <view class="type-switch">
+        <label class="item {{delivery==='pick'?'curr':''}}">
+            <text bindtap="tabClickHandler" data-delivery="pick" id="tabSwitch_pick">门店自提</text>
+            <text class="line"></text>
+        </label>
+        <label class="item {{delivery==='sent'?'curr':''}}">
+            <text bindtap="tabClickHandler" data-delivery="sent" id="tabSwitch_sent">送货上门</text>
+            <text class="line"></text>
+        </label>
+    </view>
+</view>
+<scroll-view bindscrolltolower="shopListScrollBottomHandler" class="shop-list" scrollY="true" wx:if="{{delivery==='pick'}}">
+    <view bindtap="shopSelectHandler" class="shop {{item.isClick===0?'disabled':''}}" data-shop="{{item}}" id="shop_{{item.deptId}}" wx:if="{{shopList&&shopList.length>0}}" wx:for="{{shopList}}" wx:key="{{ item.deptId }}">
+        <view class="selected" wx:if="{{item.deptId===shopSelectId}}">
+            <label class="check-icon"></label>
+        </view>
+        <view class="name">
+            <text class="bold">{{item.name}}</text>
+            <text class="note">{{item.number}}</text>
+        </view>
+        <view class="open">
+            <label class="time-icon"></label>
+            <text>{{item.workTime}}</text>
+        </view>
+        <view class="detail">
+            <label class="address-icon"></label>
+            <text class="detail-text">{{item.address}}</text>
+        </view>
+        <label class="distance" wx:if="{{showDistance&&item.distance}}">距您{{item.distanceText}}</label>
+    </view>
+    <view class="no-shop" wx:if="{{null===shopList||shopList.length===0}}">{{noShopDesc}}</view>
+</scroll-view>
+<block wx:if="{{delivery==='sent'}}">
+    <scroll-view bindscrolltolower="myAddressScrollBottomHandler" class="my-address" scrollY="true">
+        <view class="address-list" wx:if="{{myAddressList}}">
+            <view class="title">
+                <text>我的收货地址</text>
+            </view>
+            <view class="list">
+                <view bindtap="myAddressSelectHandler" class="items" data-address="{{item}}" id="address_{{item.addrId}}" wx:for="{{myAddressList}}" wx:key="index">
+                    <view class="selected" wx:if="{{selectedAddressId===item.addrId}}">
+                        <label class="check-icon"></label>
+                    </view>
+                    <view class="detail">{{item.address}} {{item.addrDetail}}</view>
+                    <view class="info">
+                        <text class="default" wx:if="{{item.isDefault===1}}">默认地址</text>
+                        <text class="tag" wx:if="{{item.tag}}">{{item.tag}}</text>
+                        <text class="mobile" wx:if="{{item.tel}}">{{item.tel}}</text>
+                        <text class="name" wx:if="{{item.userName}}">{{item.userName}}{{item.sex}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="address-list" wx:if="{{nearbyAddressList&&nearbyAddressList.length>0}}">
+            <view class="title">
+                <text>附近地址</text>
+                <label bindtap="relocationClickHandler" class="relocation" id="relocationBtn">
+                    <label class="relocation-icon"></label>
+                    <text>重新定位</text>
+                </label>
+            </view>
+            <view class="list">
+                <view bindtap="nearbyAddressSelectHandler" class="item" data-address="{{item}}" id="nearbyAddress_{{index}}" wx:for="{{nearbyAddressList}}" wx:key="index">
+                    <view class="address">{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view bindtap="addAddressBtnHandler" class="add-btn" id="addAddressBtn">
+        <label>+ <text>新增地址</text>
+        </label>
+    </view>
+</block>
