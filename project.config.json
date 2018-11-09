@@ -27,13 +27,29 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "coupon",
+					"pathName": "pages/index/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "menu",
+					"pathName": "pages/index/menu"
+				}
+			]
 		}
 	}
 }

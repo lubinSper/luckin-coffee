@@ -2,7 +2,7 @@
     <view class="banner-box" wx:if="{{null!==adPics&&adPics.length>0}}">
         <swiper autoplay="{{autoplay}}" circular="true" class="banner-swiper-box" duration="{{duration}}" indicatorActiveColor="#fff" indicatorColor="rgba(255, 255, 255, 0.5)" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
             <swiper-item wx:for="{{adPics}}" wx:key="{{ item.index }}">
-                <image bindtap="goImgLink" class="banner-image" data-clickurl="{{item.clickUrl}}" src="{{item.sourceUrl}}"></image>
+                <image bindtap="goImgLink" class="banner-image" data-clickurl="{{item.linkUrl}}" src="{{item.picUrl}}"></image>
             </swiper-item>
         </swiper>
     </view>

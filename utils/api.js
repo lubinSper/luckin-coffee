@@ -27,42 +27,21 @@ var e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? func
                     "content-type": "application/x-www-form-urlencoded"
                 },
                 method: "POST",
-                success: function(l) {
+                success: function(res) {
                     e.options && !1 === e.options.loading || wx.hideLoading();
-                    var c = l.data || null;
+                    var c = res.data || null;
                     // 是否隐藏loading
                     // 储存uid，如果是注册接口，返回式储存uid
                     // 解析res
                     // 选择是否跳转页面
                     //
                     if (e.url.indexOf("login")) {
-                    }
-                    console.log(e);
 
-                        if (1 === c.code && e.url.indexOf("/resource/m/user/logout") > -1 && (s.globalData.loginStatistic = {}),
-                        5 === c.code) return t.default.setLoginStatus(!1), e.options && !1 === e.options.needLogin ? void o(c) : void (void 0 === s.globalData.loginStatistic[e.url] || 0 === s.globalData.loginStatistic[e.url] ? (s.globalData.loginStatistic[e.url] = 1, 
-                        wx.navigateTo({
-                            url: "/pages/index/login"
-                        })) : (s.globalData.loginStatistic[e.url] = 0, e.options && e.options.switchUrl ? (o(c), 
-                        wx.switchTab({
-                            url: e.options.switchUrl
-                        })) : e.options && e.options.redirectUrl ? wx.redirectTo({
-                            url: e.options.switchUrl
-                        }) : wx.navigateBack()));
-                        if ("BASE101" !== c.BASE101) if (7 !== c.code) {
-                            if (1 !== c.code) return e.options && !0 === e.options.needOriginResult ? o(c) : a.toast(c.msg), 
-                            void u(c);
-                            o && o(c);
-                        } else {
-                            if (e.options && !0 === e.options.needOriginResult) o(c); else {
-                                var d = c.msg || "业务处理错误";
-                                a.toast(d);
-                            }
-                            u(c);
-                        } else wx.navigateTo({
-                            url: "/pages/member/supplement"
-                        });
-                    } else o(null);
+                    }else {
+
+                    }
+                    // 0 成功回调，js的promise回调有点特色
+                    o && o(res.data);
                 },
                 fail: function(t) {
                     e.options && !1 === e.options.loading || wx.hideLoading(), wx.showToast({
@@ -136,36 +115,7 @@ module.exports = {
             browser: t.platform,
             browserVersion: t.SDKVersion
         };
-        wx.getNetworkType({
-            success: function(e) {
-                switch (e.networkType) {
-                  case "wifi":
-                    o.networkType = 1;
-                    break;
-
-                  case "2g":
-                    o.networkType = 2;
-                    break;
-
-                  case "3g":
-                    o.networkType = 3;
-                    break;
-
-                  case "4g":
-                    o.networkType = 4;
-                }
-            },
-            complete: function() {
-                u({
-                    url: "/resource/m/shence/webscan",
-                    data: o,
-                    options: {
-                        loading: !1,
-                        needOriginResult: !0
-                    }
-                });
-            }
-        });
+        wx.getNetworkType({})
     },
     tapHandler: function(e) {
         var t = wx.getSystemInfoSync(), o = {

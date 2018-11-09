@@ -29,10 +29,9 @@ Page({
             success: function(e) {
                 var a = e.code;
                 n.ajax({
-                    url: "/resource/m/user/wxlogin",
+                    url: "user/wxapp/login",
                     data: {
                         code: a,
-                        isAuthorization: !0
                     },
                     options: {
                         loading: !1
@@ -183,18 +182,14 @@ Page({
             o.globalData.mobile = "");
         });
     },
-    setDeviceId: function(e) {
-        this.setData({
-            deviceId: e
-        });
-    },
     onLoad: function(e) {
         var t = this;
-        t.wxLogin(), wx.getSystemInfo({
+        t.wxLogin();
+        wx.getSystemInfo({
             success: function(e) {
-                e.model.indexOf("iPhone") > -1 ? t.setDeviceId(o.globalData.deviceNo.ios) : t.setDeviceId(o.globalData.deviceNo.android);
             }
-        }), wx.getSetting ? wx.getSetting({
+        });
+        wx.getSetting ? wx.getSetting({
             success: function(e) {
                 e.authSetting["scope.userInfo"] && wx.getUserInfo({
                     success: function(e) {
