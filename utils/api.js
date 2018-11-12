@@ -154,8 +154,6 @@ module.exports = {
             },
             complete: function() {
                 u({
-                    url: "/resource/m/shence/webclick",
-                    data: o,
                     options: {
                         loading: !1,
                         needOriginResult: !0

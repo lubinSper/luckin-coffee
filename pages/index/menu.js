@@ -7,15 +7,52 @@ getApp()), d = !1;
 
 Page({
     data: {
-        productActiveIndex:0,
-        categorys:[]
+        delivery: null,
+        locationSuccess: null,
+        cityNoShop: !1,
+        cityNoShopText: "",
+        areaNoShop: !1,
+        areaNoShopText: null,
+        hasTakeoutKitchen: !1,
+        hasTakeoutKitchenText: null,
+        hasNoProductText: null,
+        dispatchMsg: "",
+        shopInfo: null,
+        addressInfo: null,
+        adPos: [],
+        products: null,
+        menuActiveIndex: 0,
+        productActiveIndex: 0,
+        indicatorDots: !0,
+        autoplay: !0,
+        interval: 5e3,
+        duration: 500,
+        product: null,
+        showDetailLayer: !1,
+        detailLayerAnimateData: null,
+        detailProductCount: 1,
+        detailStandardCode: null,
+        detailTemperCode: null,
+        detailAdditionList: [],
+        productScrollTop: [],
+        currentScrollTop: 0,
+        windowHeight: "",
+        windowWidth: "",
+        radio: "",
+        calcHeight: "400rpx",
+        addressSentHeight: 166,
+        addressPickHeight: 128,
+        bannerHeight: 240,
+        bannerHeightDefault: 240,
+        contentHeight: "",
+        productItemHeight: ""
     },
     tapHandler: function(t) {
-        e.tapHandler({
-            title: "luckin coffee",
-            route: this.route,
-            element: t
-        });
+        // e.tapHandler({
+        //     title: "luckin coffee",
+        //     route: this.route,
+        //     element: t
+        // });
     },
     goImgLink: function(t) {
         var e = t.currentTarget.dataset.clickurl;
@@ -114,7 +151,7 @@ Page({
             detailAdditionList: []
         }), setTimeout(function() {
             this.setData({
-                product: null,
+                products: null,
                 showDetailLayer: !1
             }), d = !1;
         }.bind(this), 280);
@@ -127,7 +164,35 @@ Page({
             productActiveIndex: e
         });
     },
-
+    productScrollHandler: function(t) {
+        for (var e = t.detail.scrollTop, a = this.data.productScrollTop, o = this.data.productActiveIndex, i = -1, n = 0; n < a.length; n++)
+            e + 15 > a[n] && e - 15 < a[n] && (i = n);
+        -1 !== i && i !== o && (i > this.data.products.length && (i = this.data.products.length - 1),
+            this.setData({
+                productActiveIndex: i,
+                bannerHeight: this.data.bannerHeightDefault - e > 0 ? this.data.bannerHeightDefault - e : 0
+            }));
+    },
+    calcProductScrollTop: function() {
+        var t = 188 * this.data.radio,
+            e = this.data.products,
+            a = [];
+        a.push(0);
+        for (var o = 0, i = 0; i < e.length; i++) {
+            o += e[i].productList.length * t;
+            a.push(o)
+        };
+        this.setData({
+            productItemHeight: t,
+            productScrollTop: a
+        });
+    },
+    calcContentHeight: function() {
+        var t = "pick" === this.data.delivery ? this.data.addressPickHeight : this.data.addressSentHeight;
+        this.setData({
+            contentHeight: this.data.windowHeight - this.data.bannerHeight - t
+        });
+    },
     productDetailMashTap: function(t) {
         return !1;
     },
@@ -165,19 +230,95 @@ Page({
         })
     },
     sortProducts:function(products){
-      for (var item of products){
-          for (var category of this.data.categorys) {
-              if (category.id == item.categoryId) {
-                  !category.products ? category.products = [] : null;
-                  category.products.push(item)
-              }
-          }
+        for (var cIdx in this.data.products) {
+            if (!this.data.products[cIdx].productList){
+                this.data.products[cIdx].productList = [];
+            }
+            for (var iIdex in products){
+                if (this.data.products[cIdx].id == products[iIdex].categoryId) {
+                    this.data.products[cIdx].productList.push(products[iIdex])
+                }
+            }
       }
       var that = this;
       wx.hideLoading();
       this.setData({
-          categorys:that.data.categorys
-      })
+          products:that.data.products
+      });
+        this.calcProductScrollTop();
+        this.calcContentHeight();
+    },
+    addShoppingCartForIndex: function(a) {
+        var i = this;
+        if (this.tapHandler(a), !d) {
+            d = !0;
+            var s = a.target.dataset.pop ? a.target.dataset.pop : a.currentTarget.dataset.pop,
+                r = a.target.dataset.product ? a.target.dataset.product : a.currentTarget.dataset.product;
+            if (0 !== r.maxAmount) {
+                var c = !r.temperAttributeItem || r.temperAttributeItem.length <= 1, l = !r.additionDefaultList || r.additionDefaultList.length < 1, u = !1;
+                if (r.standardCodeItem) {
+                    for (var h = 0, p = 0; p < r.standardCodeItem.length; p++) 1 === r.standardCodeItem[p].isInventory && h++;
+                    u = !(h > 1);
+                } else u = !0;
+                if (!s && u && c && l) {
+                    var g = null, f = null;
+                    return r.standardCodeItem && r.standardCodeItem.length > 0 && (g = r.standardCodeItem[0].code),
+                        f = r.temperAttributeItem && r.temperAttributeItem.length > 0 ? r.temperAttributeItem[0].code : r.temperAttributeCode,
+                    t.default.add({
+                        productId: r.productId,
+                        temperAttributeCode: f,
+                        standardCode: g,
+                        amount: 1,
+                        additionList: r.additionDefaultList,
+                        eatway: r.eatway,
+                        maxAmount: r.maxAmount
+                    }) && o.toast("成功加入购物车", "success"), void (d = !1);
+                }
+                var m = r.promotionMsg;
+                e.ajax({
+                    url: "/shop/goods/detail",
+                    data: {
+                        id: r.id,
+                        isHide: "NO",
+                    }
+                }).then(function(t) {
+                    var e = t.data;
+                    i.setData({
+                        product: Object.assign({}, e, {
+                            promotionMsg: m
+                        })
+                    }), i.reCalculateProductCheck(e);
+                    var a = wx.createAnimation({
+                        duration: 300,
+                        timingFunction: "line"
+                    });
+                    i.animation = a, a.scale(.3, .3).step(), i.setData({
+                        showDetailLayer: !0,
+                        detailLayerAnimateData: a.export()
+                    }), setTimeout(function() {
+                        a.scale(1.05, 1.05).step(), this.setData({
+                            detailLayerAnimateData: a.export()
+                        });
+                    }.bind(i), 100), setTimeout(function() {
+                        var t = this;
+                        a.scale(1, 1).step(), this.setData({
+                            detailLayerAnimateData: a.export()
+                        }), 0 === e.basicInfo.stores && wx.showModal({
+                            title: "",
+                            content: '"' + e.name + '"暂停售卖，请选购其他',
+                            showCancel: !1,
+                            confirmText: "选购其他",
+                            confirmColor: n.globalData.modal.confirmColor,
+                            success: function(e) {
+                                t.hideProductDetailLayer(), t.loadProductList();
+                            }
+                        });
+                    }.bind(i), 400);
+                }).catch(function(t) {
+                    d = !1;
+                });
+            } else d = !1;
+        }
     },
     loadcategory:function(){
         var that = this;
@@ -192,14 +333,41 @@ Page({
             }
         }).then(res=>{
             wx.hideLoading();
-            that.data.categorys = res.data;
+            that.data.products = res.data;
             that.loadProductList();
         })
     },
+    loadSystemInfo: function() {
+        var t = this, e = wx.getSystemInfoSync();
+        if ("android" === e.platform) wx.createSelectorQuery().select("#fixed-helper").boundingClientRect(function(e) {
+            var a = e.width / 750;
+            t.setData({
+                windowHeight: e.height,
+                windowWidth: e.width,
+                radio: a,
+                addressSentHeight: t.data.addressSentHeight * a,
+                addressPickHeight: t.data.addressPickHeight * a,
+                bannerHeight: t.data.bannerHeight * a,
+                bannerHeightDefault: t.data.bannerHeightDefault * a
+            });
+        }).exec(); else {
+            var a = e.windowWidth / 750;
+            this.setData({
+                windowHeight: e.windowHeight,
+                windowWidth: e.windowWidth,
+                radio: a,
+                addressSentHeight: this.data.addressSentHeight * a,
+                addressPickHeight: this.data.addressPickHeight * a,
+                bannerHeight: this.data.bannerHeight * a,
+                bannerHeightDefault: this.data.bannerHeightDefault * a
+            });
+        }
+    },
     onLoad: function(t) {
+        this.loadSystemInfo()
         this.loadAdposData();
         this.loadcategory();
-        this.loadProductList();
+        // this.loadProductList();
     },
     onReady: function() {},
     onHide: function() {

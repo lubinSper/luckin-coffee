@@ -39,7 +39,7 @@
             </swiper-item>
         </swiper>
     </view>
-    <block wx:if="{{!categorys||categorys.length===0}}">
+    <block wx:if="{{!products||products.length===0}}">
         <view class="location-faild" wx:if="{{null===products}}">
             <view class="text">加载中···</view>
         </view>
@@ -55,7 +55,7 @@
             <scroll-view scrollY class="menu-view" scrollIntoView="menu-{{productActiveIndex}}" style="height: {{contentHeight}}px">
                 <view bindtap="tapMenuItem" class="menu-item {{productActiveIndex===idx?'active':''}}"
                       data-id="{{idx}}" id="menu-{{idx}}"
-                      wx:for="{{categorys}}" wx:for-index="idx" wx:key="kindName">
+                      wx:for="{{products}}" wx:for-index="idx" wx:key="kindName">
                     <view class="text">{{item.name}}</view>
                     <view class="label" style="background: {{item.timeDiscountInfo.bgColor}}" wx:if="{{item.isTimeDiscount}}">
                         <text style="color: {{item.timeDiscountInfo.nameColor}}; background: {{item.timeDiscountInfo.bgColor}}">{{item.timeDiscountInfo.name}}</text>
@@ -65,7 +65,7 @@
         </view>
         <view class="product-box">
             <scroll-view scrollY bindscroll="productScrollHandler" class="product-view" scrollTop="{{currentScrollTop}}" style="height: {{contentHeight}}px">
-                <view wx:for="{{categorys}}" wx:for-index="idx" wx:key="kindName">
+                <view wx:for="{{products}}" wx:for-index="idx" wx:key="kindName">
                     <view class="product-category" id="kind-{{idx}}">
                         <view class="product-category-text">
                             <view class="title-box">
@@ -83,7 +83,7 @@
                         <view class="title-hr {{item.kindDesc?'sub-hr':''}}"></view>
                     </view>
                     <view bindtap="addShoppingCartForIndex" class="product-item-box {{product.maxAmount===0?'saleout':''}}" data-pop="true" data-product="{{product}}" id="productItem_{{product.productId}}"
-                          wx:for="{{item.products}}" wx:for-item="product" wx:key="productId">
+                          wx:for="{{item.productList}}" wx:for-item="product" wx:key="productId">
                         <view class="product-mask"></view>
                         <view class="product-pic-box">
                             <image class="product-pic" src="{{product.pic}}"></image>
